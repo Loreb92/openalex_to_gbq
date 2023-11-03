@@ -196,8 +196,8 @@ async function start(inPath, outPath, files) {
 const EXTENSION = ".gz";
 const WORKS_FOLDER = "works/";
 
-const inRootPath = "/data/";
-const outRootPath = "/data/converted/";
+const inRootPath = "/fedeslab/data/openalex-original/";
+const outRootPath = "/fedeslab/data/openalex-processed/";
 
 // Get a list of nested folders within the works directory
 const folders = fileSystem.readdirSync(inRootPath + WORKS_FOLDER, { withFileTypes: true })

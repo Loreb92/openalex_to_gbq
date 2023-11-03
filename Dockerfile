@@ -1,12 +1,14 @@
+# Install node image
 FROM node
 
-RUN npm install -g chalk
-RUN npm install -g ndjson
-RUN npm install -g JSON
-RUN npm install -g zlib
-RUN npm install -g util
-RUN npm install -g lodash
-RUN npm install -g stream
+# Copy files from local to the container
+COPY proj/package.json .
+COPY proj /proj/
 
-# Tell node where to find dependencies 
-ENV NODE_PATH /usr/local/bin
+# WORKDIR is equivalent to cd in the image
+
+# It installs packages from package.json
+RUN npm install
+
+# To run the application
+CMD ["node", "/proj/run_works.js"]

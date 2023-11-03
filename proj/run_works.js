@@ -67,6 +67,9 @@ function fix_authorships(authorships) {
 }
 
 function fix_host_venue(host_venue) {
+	if (host_venue==null) {
+			return(null)
+	}
 	if (!host_venue.issn) {
 		host_venue.issn = [];		
 	}
@@ -137,10 +140,10 @@ async function fixFile(inPath, outPath, file) {
                     ++count % 100000 || console.log(count);
 
 					data.authorships = fix_authorships(data.authorships);
-					data.host_venue = fix_host_venue(data.host_venue);
+					data.primary_location = fix_host_venue(data.primary_location);
 					data.counts_by_year = fix_counts_by_year(data.counts_by_year);
 					data.mesh = fix_mesh(data.mesh);
-					data.alternate_host_venues = fix_alternate_host_venues(data.alternate_host_venues);
+					data.locations = fix_alternate_host_venues(data.locations);
 					data.concepts = fix_concepts(data.concepts);
 
 					data.abstract_inverted_index = JSON.stringify(data.abstract_inverted_index);
@@ -180,13 +183,38 @@ async function start(inPath, outPath, files) {
 // -----
 
 
-const EXTENSION = '.gz';
+//const EXTENSION = '.gz';
+//
+//const FOLDER = 'works/updated_date=2023-04-20/'; //folder for conversion
+//
+//const inPath = '/data/' + FOLDER;
+//const outPath = '/data/converted/' + FOLDER;
+//
+//var files = fileSystem.readdirSync(inPath);
+//
+//start(inPath, outPath, files);
+const EXTENSION = ".gz";
+const WORKS_FOLDER = "works/";
 
-const FOLDER = '<FOLDER>'; //folder for conversion
+const inRootPath = "/data/";
+const outRootPath = "/data/converted/";
 
-const inPath = '/proj/data/raw/' + FOLDER;
-const outPath = '/proj/data/converted/' + FOLDER;
+// Get a list of nested folders within the works directory
+const folders = fileSystem.readdirSync(inRootPath + WORKS_FOLDER, { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => dirent.name);
 
-var files = fileSystem.readdirSync(inPath);
+// Process each nested folder
+for (let i = 0; i < folders.length; i++) {
+  const folder = folders[i];
+  const inPath = inRootPath + WORKS_FOLDER + folder + "/";
+  const outPath = outRootPath + WORKS_FOLDER + folder + "/";
 
-start(inPath, outPath, files);
+  // Create the outPath directory if it doesn't exist
+  if (!fileSystem.existsSync(outPath)) {
+    fileSystem.mkdirSync(outPath, { recursive: true });
+  }
+
+  var files = fileSystem.readdirSync(inPath);
+  await start(inPath, outPath, files);
+}

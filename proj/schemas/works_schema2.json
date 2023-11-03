@@ -1,0 +1,328 @@
+[
+  {"name": "id", "type": "STRING"},
+  {"name": "doi", "type": "STRING"},
+  {"name": "ids", "type": "RECORD",
+    "fields": [
+      {"name": "doi", "type": "STRING"},
+      {"name": "mag", "type": "STRING"},
+      {"name": "openalex", "type": "STRING"},
+      {"name": "pmcid", "type": "STRING"},
+	  {"name": "pmid", "type": "STRING"}
+    ]
+  },
+  {"name": "corresponding_author_ids","type":"STRING","mode": "REPEATED"},
+  {"name": "corresponding_institution_ids","type":"STRING","mode": "REPEATED"},
+  {"name": "mesh", "type": "RECORD","mode":"REPEATED",
+    "fields": [
+      {"name": "is_major_topic", "type": "BOOLEAN"},
+      {"name": "descriptor_ui", "type": "STRING"},
+      {"name": "descriptor_name", "type": "STRING"},
+      {"name": "qualifier_ui", "type": "STRING"},
+      {"name": "qualifier_name", "type": "STRING"}
+    ]
+  },
+  {"name": "type", "type": "STRING"},
+  {"name": "title", "type": "STRING"},
+  {"name": "biblio", "type": "RECORD",
+    "fields": [
+      {"name": "issue", "type": "STRING"},
+      {"name": "volume", "type": "STRING"},
+      {"name": "last_page", "type": "STRING"},
+      {"name": "first_page", "type": "STRING"}
+    ]
+  },
+  {"name": "funders", "type": "RECORD", "mode": "REPEATED",
+  "fields":
+  [
+      {"name": "id", "type": "STRING"},
+	  {"name": "ids", "type": "RECORD",
+			"fields": [
+      {"name": "wikidata", "type": "STRING"},
+      {"name": "ror", "type": "STRING"},
+      {"name": "mag", "type": "STRING"},
+      {"name": "openalex", "type": "STRING"},
+      {"name": "pmcid", "type": "STRING"},
+	  {"name": "pmid", "type": "STRING"}
+    ]},
+	{"name" : "awards", "type": "STRING", "mode" : "REPEATED"},
+	{"name" : "display_name", "type": "STRING", "mode" : "NULLABLE"}
+  ]},
+  {"name": "concepts", "type": "RECORD","mode":"REPEATED",
+    "fields": [
+      {"name": "id", "type": "STRING"},
+      {"name": "level", "type": "INTEGER"},
+      {"name": "score", "type": "FLOAT"},
+      {"name": "wikidata", "type": "STRING"},
+      {"name": "display_name", "type": "STRING"}
+    ]
+  },
+  {"name": "locations", "type": "RECORD","mode":"REPEATED",
+    "fields": [
+      {"name": "is_oa", "type": "BOOLEAN"},
+      {"name": "id", "type": "STRING"},
+      {"name": "display_name", "type": "STRING"},
+      {"name": "type", "type": "STRING"},
+      {"name": "url", "type": "STRING"},
+      {"name": "source", "type": "RECORD",
+        "fields": [
+          {"name": "id", "type": "STRING"},
+          {"name": "issn", "type": "STRING", "mode": "REPEATED"},
+          {"name": "type", "type": "STRING"},
+          {"name": "issn_l", "type": "STRING"},
+          {"name": "publisher", "type": "STRING"},
+          {"name": "display_name", "type": "STRING"},
+          {"name": "publisher_id", "type": "STRING"},
+          {"name": "host_organization", "type": "STRING"},
+          {"name": "host_organization_name", "type": "STRING"},
+          {"name": "host_organization_lineage", "type": "STRING","mode":"REPEATED"},
+          {"name": "host_organization_lineage_names", "type": "STRING","mode":"REPEATED"}
+        ]
+      },
+      {"name": "license", "type": "STRING"},
+      {"name": "pdf_url", "type": "STRING"},
+      {"name": "version", "type": "STRING"},
+      {"name": "landing_page_url", "type": "STRING"},
+      {"name": "issn", "type": "STRING", "mode": "REPEATED"}
+    ]
+  },
+  {"name": "authorships", "type": "RECORD", "mode": "REPEATED",
+  "fields":[
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "type",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "ror",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "country_code",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "display_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "id",
+            "type": "STRING"
+          }
+        ],
+        "mode": "REPEATED",
+        "name": "institutions",
+        "type": "RECORD"
+      },
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE",
+            "name": "orcid",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "display_name",
+            "type": "STRING"
+          },
+          {
+            "mode": "NULLABLE",
+            "name": "id",
+            "type": "STRING"
+          }
+        ],
+        "mode": "NULLABLE",
+        "name": "author",
+        "type": "RECORD"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "raw_affiliation_string",
+        "type": "STRING"
+      },
+	  {
+        "mode": "REPEATED",
+        "name": "raw_affiliation_strings",
+        "type": "STRING"
+      },
+
+	  {
+        "mode": "NULLABLE",
+        "name": "is_corresponding",
+        "type": "BOOLEAN"
+      },
+      {
+        "mode": "NULLABLE",
+        "name": "author_position",
+        "type": "STRING"
+      }
+    ]},
+  {"name": "is_paratext", "type": "BOOLEAN"},
+  {"name": "open_access", "type": "RECORD",
+    "fields": [
+      {"name": "is_oa", "type": "BOOLEAN"},
+      {"name": "oa_url", "type": "STRING"},
+      {"name": "oa_status", "type": "STRING"},
+      {"name": "any_repository_has_fulltext", "type": "BOOLEAN"}
+    ]
+  },
+  {"name": "created_date", "type": "STRING"},
+  {"name": "display_name", "type": "STRING"},
+  {"name": "language", "type": "STRING"},
+  {"name": "is_retracted", "type": "BOOLEAN"},
+  {"name": "updated_date", "type": "STRING"},
+  {"name": "doi_registration_agency", "type": "STRING"},
+  {"name": "related_works", "type": "STRING", "mode": "REPEATED"},
+  {"name": "cited_by_count", "type": "INTEGER"},
+  {"name": "locations_count", "type": "INTEGER"},
+  {"name": "apc_paid_usd", "type": "BOOLEAN","mode":"NULLABLE"},
+  {"name": "apc_payment", "type": "RECORD",
+    "fields": [
+      {"name": "price", "type": "INTEGER"},
+      {"name": "currency", "type": "STRING"},
+      {"name": "provenance", "type": "STRING"},
+      {"name": "price_usd", "type": "INTEGER"}
+    ], "mode": "REPEATED"
+  },
+
+  {"name": "apc_paid", "type": "RECORD",
+    "fields": [
+      {"name": "price", "type": "INTEGER"},
+      {"name": "currency", "type": "STRING"},
+      {"name": "provenance", "type": "STRING"},
+      {"name": "price_usd", "type": "INTEGER"}
+    ], "mode": "REPEATED"
+  },
+  {"name": "grants", "type": "RECORD",
+    "fields": [
+      {"name": "funder", "type": "STRING"},
+      {"name": "funder_display_name", "type": "STRING"},
+      {"name": "award_id", "type": "STRING"}
+    ], "mode": "REPEATED"
+  },
+  {"name": "counts_by_year", "type": "RECORD",
+    "fields": [
+      {"name": "year", "type": "INTEGER"},
+      {"name": "cited_by_count", "type": "INTEGER"}
+    ], "mode": "REPEATED"
+  },
+  {"name": "best_oa_location", "type": "RECORD", "mode": "NULLABLE",
+  "fields" : [{"name": "is_oa", "type": "BOOLEAN"},
+      {"name": "source", "type": "RECORD",
+        "fields": [
+          {"name": "id", "type": "STRING"},
+          {"name": "issn", "type": "STRING", "mode": "REPEATED"},
+          {"name": "type", "type": "STRING"},
+          {"name": "issn_l", "type": "STRING"},
+          {"name": "publisher", "type": "STRING"},
+          {"name": "display_name", "type": "STRING"},
+          {"name": "publisher_id", "type": "STRING"},
+          {"name": "host_organization", "type": "STRING"},
+          {"name": "host_organization_name", "type": "STRING"},
+          {"name": "host_organization_lineage", "type": "STRING","mode":"REPEATED"},
+          {"name": "host_organization_lineage_names", "type": "STRING","mode":"REPEATED"}
+        ]
+      },
+      {"name": "license", "type": "STRING"},
+      {"name": "pdf_url", "type": "STRING"},
+      {"name": "version", "type": "STRING"},
+      {"name": "landing_page_url", "type": "STRING"},
+      {"name": "issn", "type": "STRING", "mode": "REPEATED"}
+    ]},
+  {"name": "cited_by_api_url", "type": "STRING"},
+  {"name": "primary_location", "type": "RECORD",
+    "fields": [
+      {"name": "is_oa", "type": "BOOLEAN"},
+      {"name": "source", "type": "RECORD",
+        "fields": [
+          {"name": "id", "type": "STRING"},
+          {"name": "issn", "type": "STRING", "mode": "REPEATED"},
+          {"name": "type", "type": "STRING"},
+          {"name": "issn_l", "type": "STRING"},
+          {"name": "publisher", "type": "STRING"},
+          {"name": "display_name", "type": "STRING"},
+          {"name": "publisher_id", "type": "STRING"},
+          {"name": "host_organization", "type": "STRING"},
+          {"name": "host_organization_name", "type": "STRING"},
+          {"name": "host_organization_lineage", "type": "STRING","mode":"REPEATED"},
+          {"name": "host_organization_lineage_names", "type": "STRING","mode":"REPEATED"}
+        ]
+      },
+      {"name": "license", "type": "STRING"},
+      {"name": "pdf_url", "type": "STRING"},
+      {"name": "version", "type": "STRING"},
+      {"name": "landing_page_url", "type": "STRING"},
+      {"name": "issn", "type": "STRING", "mode": "REPEATED"}
+    ]
+  },
+  {"name": "publication_date", "type": "STRING"},
+  {"name": "publication_year", "type": "INTEGER"},
+  {"name": "referenced_works", "type": "STRING", "mode": "REPEATED"},
+  {"name": "abstract_inverted_index", "type": "STRING"},
+  {
+    "fields": [
+    {
+      "mode": "NULLABLE",
+      "name": "works_count",
+      "type": "INTEGER"
+    },
+	{
+      "mode": "NULLABLE",
+      "name": "2yr_h_index",
+      "type": "INTEGER"
+    },
+
+	{
+      "mode": "NULLABLE",
+      "name": "2yr_i10_index",
+      "type": "INTEGER"
+    },
+ 	{
+      "mode": "NULLABLE",
+      "name": "2yr_mean_citedness",
+      "type": "FLOAT"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "h_index",
+      "type": "INTEGER"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "2yr_cited_by_count",
+      "type": "INTEGER"
+    },
+
+	{
+      "mode": "NULLABLE",
+      "name": "2yr_works_count",
+      "type": "INTEGER"
+    },
+	{
+      "mode": "NULLABLE",
+      "name": "cited_by_count",
+      "type": "INTEGER"
+    },
+	{
+      "mode": "NULLABLE",
+      "name": "i10_index",
+      "type": "INTEGER"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "oa_percent",
+      "type": "FLOAT"
+    }
+    ],
+    "mode": "NULLABLE",
+    "name": "summary_stats",
+    "type": "RECORD"
+  }
+]
+

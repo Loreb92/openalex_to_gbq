@@ -12,10 +12,10 @@
     "type": "DATE"
   },
 	{
-    "mode": "NULLABLE",
-    "name": "most_cited_work",
-    "type": "STRING"
-	}, 
+	"mode": "NULLABLE",
+	"name": "most_cited_work",
+	"type": "STRING"
+		}, 
 	{
     "fields": [
       {

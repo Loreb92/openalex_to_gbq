@@ -33,7 +33,7 @@ Note: `venues` and `authors` do not require convertion and can be uploaded as is
 3. Copy files to google cloud storage
 
 ```
-gsutil -m cp -r openalex-processed/data/* gs://my-bucket/dest
+gsutil -m cp -r openalex-processed/data/*git  gs://my-bucket/dest
 ```
 
 4. Create the bigquery table

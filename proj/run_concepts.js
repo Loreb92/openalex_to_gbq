@@ -111,21 +111,21 @@ async function start(inPath, outPath, files) {
 
 const EXTENSION = '.gz';
 
-const FOLDER = 'concepts/'; // manually change to folder you wish to convert
+const CONCEPTS_FOLDER = 'concepts/'; // manually change to folder you wish to convert
 
-const inRootPath = 'openalex-original/data/' + FOLDER;
-const outRootPath = 'openalex-processed/data/' + FOLDER;
+const inRootPath = 'openalex-original/data/';
+const outRootPath = 'openalex-processed/data/';
 
 // Get a list of nested folders within the works directory
-const folders = fileSystem.readdirSync(inRootPath + WORKS_FOLDER, { withFileTypes: true })
+const folders = fileSystem.readdirSync(inRootPath + CONCEPTS_FOLDER, { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
 
 // Process each nested folder
 for (let i = 0; i < folders.length; i++) {
   const folder = folders[i];
-  const inPath = inRootPath + WORKS_FOLDER + folder + "/";
-  const outPath = outRootPath + WORKS_FOLDER + folder + "/";
+  const inPath = inRootPath + CONCEPTS_FOLDER + folder + "/";
+  const outPath = outRootPath + CONCEPTS_FOLDER + folder + "/";
 
   // Create the outPath directory if it doesn't exist
   if (!fileSystem.existsSync(outPath)) {

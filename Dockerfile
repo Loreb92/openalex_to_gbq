@@ -26,5 +26,5 @@ RUN npm install
 
 # To run the application
 # Note: if the "docker run ..." command ends with "sh", the following commands are overridden and it is needed to run manually them inside the container
-CMD ["run_all.sh"]
+CMD ["/bin/bash", "run_all.sh"]
 

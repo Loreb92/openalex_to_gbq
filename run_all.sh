@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo $PWD
-echo ls proj
-
-
 echo "Running all scripts to process openalex tables."
 
 # Run the main Node.js script

@@ -111,10 +111,10 @@ async function start(inPath, outPath, files) {
 
 const EXTENSION = '.gz';
 
-const FOLDER = '<FOLDER>'; // manually change to folder you wish to convert
+const FOLDER = 'concepts/'; // manually change to folder you wish to convert
 
-const inPath = '/proj/data/raw/' + FOLDER;
-const outPath = '/proj/data/converted/' + FOLDER;
+const inPath = 'openalex-original/data/' + FOLDER;
+const outPath = 'openalex-processed/data/' + FOLDER;
 
 var files = fileSystem.readdirSync(inPath);
 

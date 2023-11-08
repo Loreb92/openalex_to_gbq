@@ -11,6 +11,10 @@ COPY proj /openalex_to_gbq/proj/
 # WORKDIR is equivalent to cd in the image
 WORKDIR openalex_to_gbq
 
+# Create the folders for the data
+RUN mkdir openalex-original
+RUN mkdir openalex-processed
+
 # For debugging purposes
 #RUN pwd
 #RUN ls

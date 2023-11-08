@@ -118,9 +118,25 @@ const EXTENSION = '.gz';
 
 const FOLDER = 'institutions/'; // Folder for conversion
 
-const inPath = 'openalex-original/data/' + FOLDER;
-const outPath = 'openalex-processed/data/' + FOLDER;
+const inRootPath = 'openalex-original/data/' + FOLDER;
+const outRootPath = 'openalex-processed/data/' + FOLDER;
 
-var files = fileSystem.readdirSync(inPath);
+// Get a list of nested folders within the works directory
+const folders = fileSystem.readdirSync(inRootPath + WORKS_FOLDER, { withFileTypes: true })
+  .filter(dirent => dirent.isDirectory())
+  .map(dirent => dirent.name);
 
-start(inPath, outPath, files);
+// Process each nested folder
+for (let i = 0; i < folders.length; i++) {
+  const folder = folders[i];
+  const inPath = inRootPath + WORKS_FOLDER + folder + "/";
+  const outPath = outRootPath + WORKS_FOLDER + folder + "/";
+
+  // Create the outPath directory if it doesn't exist
+  if (!fileSystem.existsSync(outPath)) {
+    fileSystem.mkdirSync(outPath, { recursive: true });
+  }
+
+  var files = fileSystem.readdirSync(inPath);
+  await start(inPath, outPath, files);
+}

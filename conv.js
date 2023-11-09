@@ -1,4 +1,3 @@
-
 import { readFileSync, writeFileSync } from 'fs';
 
 function convertTSVtoJSON(input_tsv, output_json) {
@@ -45,6 +44,26 @@ function convertTSVtoJSON(input_tsv, output_json) {
         }
     }
 
+    // Add the required keys to the schema
+    const required = [];
+    for (let i = 1; i < rows.length; i++) {
+        const row = rows[i].split('\t');
+        if (row[2] === 'REQUIRED') {
+            if (row[0].includes('.')) {
+                const parts = row[0].split('.');
+                let obj = schema.properties;
+                for (let j = 0; j < parts.length - 1; j++) {
+                    obj = obj[parts[j]].properties;
+                }
+                obj[parts[parts.length - 1]].required = true;
+            } else {
+                schema.properties[row[0]].required = true;
+            }
+            required.push(row[0]);
+        }
+    }
+    schema.required = required;
+
     // Write the JSON schema file
     writeFileSync(output_json, JSON.stringify(schema, null, 2));
 }
@@ -53,3 +72,4 @@ function convertTSVtoJSON(input_tsv, output_json) {
 const input_tsv = process.argv[2];
 const output_json = process.argv[3];
 convertTSVtoJSON(input_tsv, output_json);
+

@@ -1,9 +1,9 @@
 
-const fs = require('fs');
+import { readFileSync, writeFileSync } from 'fs';
 
 function convertTSVtoJSON(input_tsv, output_json) {
     // Read the TSV file
-    const tsv = fs.readFileSync(input_tsv, 'utf-8');
+    const tsv = readFileSync(input_tsv, 'utf-8');
 
     // Split the TSV into rows
     const rows = tsv.split('\n');
@@ -46,7 +46,7 @@ function convertTSVtoJSON(input_tsv, output_json) {
     }
 
     // Write the JSON schema file
-    fs.writeFileSync(output_json, JSON.stringify(schema, null, 2));
+    writeFileSync(output_json, JSON.stringify(schema, null, 2));
 }
 
 // Pass the input_tsv and output_json arguments when calling the script with "node" command

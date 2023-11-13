@@ -33,6 +33,7 @@ authorships.raw_author_name	STRING	NULLABLE	This author’s name as it originall
 best_oa_location	RECORD	NULLABLE	A Location object with the best available open access location for this work.
 best_oa_location.is_accepted	BOOLEAN	NULLABLE	
 best_oa_location.is_oa	BOOLEAN	NULLABLE	True if this work is Open Access (OA).
+best_oa_location.is_published	BOOLEAN	NULLABLE	
 best_oa_location.landing_page_url	STRING	NULLABLE	The landing page URL for this location.
 best_oa_location.license	STRING	NULLABLE	The location’s publishing license. This can be a Create Commons license such as cc0 or cc-by, a publisher-specific license, or null which means we are not able to determine a license for this location.
 best_oa_location.pdf_url	STRING	NULLABLE	A URL where you can find this location as a PDF.

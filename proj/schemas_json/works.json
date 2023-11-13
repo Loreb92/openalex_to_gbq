@@ -310,6 +310,12 @@
                         "description": ""
                     },
                     {
+                        "name": "publisher_lineage",
+                        "type": "STRING",
+                        "mode": "REPEATED",
+                        "description": ""
+                    },
+                    {
                         "name": "type",
                         "type": "STRING",
                         "mode": "NULLABLE",

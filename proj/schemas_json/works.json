@@ -868,7 +868,7 @@
             {
                 "name": "issn",
                 "type": "STRING",
-                "mode": "NULLABLE",
+                "mode": "REPEATED",
                 "description": "The ISSN of the work."
             },
             {

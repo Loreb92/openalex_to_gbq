@@ -46,6 +46,7 @@ best_oa_location.source.host_organization_lineage_names	STRING	REPEATED	The name
 best_oa_location.source.host_organization_name	STRING	NULLABLE	The display_name from the host_organization, shown for convenience.
 best_oa_location.source.id	STRING	NULLABLE	The OpenAlex ID for this source.
 best_oa_location.source.is_in_doaj	BOOLEAN	NULLABLE	Whether this is a journal listed in the Directory of Open Access Journals (DOAJ).
+best_oa_location.source.is_oa	BOOLEAN	NULLABLE	
 best_oa_location.source.issn	STRING	REPEATED	The ISSNs used by this source. Many publications have multiple ISSNs (see above), so ISSN-L should be used when possible.
 best_oa_location.source.issn_l	STRING	NULLABLE	The ISSN-L identifying this source. This is the Canonical External ID for sources.
 best_oa_location.source.publisher	STRING	NULLABLE	

@@ -888,6 +888,12 @@
                 "description": ""
             },
             {
+                "name": "url",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "version",
                 "type": "STRING",
                 "mode": "NULLABLE",

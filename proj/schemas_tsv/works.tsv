@@ -142,6 +142,7 @@ locations.source.publisher_lineage	STRING	REPEATED
 locations.source.publisher_lineage_names	STRING	REPEATED	
 locations.source.type	STRING	NULLABLE	The type of source.
 locations.type	STRING	NULLABLE	
+locations.url	STRING	NULLABLE	
 locations.version	STRING	NULLABLE	The version of the work, based on the DRIVER Guidelines versioning scheme. Possible values are: publishedVersion: The document’s version of record. This is the most authoritative version. acceptedVersion: The document after having completed peer review and being officially accepted for publication. It will lack publisher formatting, but the content should be interchangeable with the that of the publishedVersion. submittedVersion: the document as submitted to the publisher by the authors, but before peer-review. Its content may differ significantly from that of the accepted article.
 locations_count	INTEGER	NULLABLE	Number of locations for this work.
 mesh	RECORD	REPEATED	List of MeSH tag objects. Only works found in PubMed have MeSH tags; for all other works, this is an empty list.

@@ -81,6 +81,7 @@ funders.ids	RECORD	NULLABLE
 funders.ids.openalex	STRING	NULLABLE	
 funders.ids.ror	STRING	NULLABLE	
 funders.ids.wikidata	STRING	NULLABLE	
+fulltext_origin	STRING	NULLABLE	
 grants	RECORD	REPEATED	List of grant objects, which include the Funder and the award ID, if available. Our grants data comes from Crossref, and is currently fairly limited.
 grants.award_id	STRING	NULLABLE	
 grants.funder	STRING	NULLABLE	

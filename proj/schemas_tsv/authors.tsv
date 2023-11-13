@@ -1,0 +1,47 @@
+name	type	mode	description
+cited_by_count	INTEGER	NULLABLE	The total number Works that cite a work this author has created.
+counts_by_year	RECORD	REPEATED	Author.works_count and Author.cited_by_count for each of the last ten years, binned by year. To put it another way: each year, you can see how many works this author published, and how many times they got cited. Any works or citations older than ten years old aren’t included.
+counts_by_year.cited_by_count	INTEGER	NULLABLE	The total number  Works that cite a work this author has created.
+counts_by_year.oa_works_count	INTEGER	NULLABLE	
+counts_by_year.works_count	INTEGER	NULLABLE	The number of  Works this this author has created.
+counts_by_year.year	INTEGER	NULLABLE	The year.
+created_date	DATE	NULLABLE	The date this Author object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
+display_name	STRING	NULLABLE	The name of the author as a single string.
+display_name_alternatives	STRING	REPEATED	Other ways that we’ve found this author’s name displayed.
+id	STRING	NULLABLE	The OpenAlex ID for this author.
+ids	RECORD	NULLABLE	All the persistent identifiers (PIDs) that we know about for this author, as key: value pairs, where key is the PID namespace, and value is the PID. IDs are expressed as URIs where possible. The openalex ID is the same one you’ll find at Author.id. All the IDs are strings except for mag, which is an integer.
+ids.mag	INTEGER	NULLABLE	this author’s Microsoft Academic Graph ID
+ids.openalex	STRING	NULLABLE	this author’s OpenAlex ID. Same as Author.id
+ids.orcid	STRING	NULLABLE	this author’s ORCID ID. Same as Author.orcid
+ids.scopus	STRING	NULLABLE	this author’s Scopus author ID
+ids.twitter	STRING	NULLABLE	this author’s Twitter handle
+ids.wikipedia	STRING	NULLABLE	this author’s Wikipedia page
+last_known_institution	RECORD	NULLABLE	This author’s last known institutional affiliation. In this context “last known” means that we took all the Works where this author has an institutional affiliation, sorted them by publication date, and selected the most recent one. This is a dehydrated Institution object, and you can find more documentation on the Institution page.
+last_known_institution.country_code	STRING	NULLABLE	The country where this institution is located, represented as an ISO two-letter country code.
+last_known_institution.display_name	STRING	NULLABLE	The primary name of the institution.
+last_known_institution.id	STRING	NULLABLE	The OpenAlex ID for this institution.
+last_known_institution.lineage	STRING	REPEATED	OpenAlex IDs of institutions. The list will include this institution’s ID, as well as any parent institutions. If this institution has no parent institutions, this list will only contain its own ID.
+last_known_institution.ror	STRING	NULLABLE	The ROR ID for this institution. The ROR (Research Organization Registry) identifier is a globally unique ID for research organization. ROR is the successor to GRiD, which is no longer being updated.
+last_known_institution.type	STRING	NULLABLE	The institution’s primary type, using the ROR “type” controlled vocabulary. Possible values are: Education, Healthcare, Company, Archive, Nonprofit, Government, Facility, and Other.
+most_cited_work	STRING	NULLABLE	The title of the most cited work.
+orcid	STRING	NULLABLE	The ORCID for this author. ORCID global and unique ID for authors.
+summary_stats	RECORD	NULLABLE	Citation metrics for this author.
+summary_stats.2yr_cited_by_count	INTEGER	NULLABLE	
+summary_stats.2yr_h_index	INTEGER	NULLABLE	
+summary_stats.2yr_i10_index	INTEGER	NULLABLE	
+summary_stats.2yr_mean_citedness	FLOAT	NULLABLE	
+summary_stats.2yr_works_count	INTEGER	NULLABLE	
+summary_stats.cited_by_count	INTEGER	NULLABLE	
+summary_stats.h_index	INTEGER	NULLABLE	
+summary_stats.i10_index	INTEGER	NULLABLE	
+summary_stats.oa_percent	FLOAT	NULLABLE	
+summary_stats.works_count	INTEGER	NULLABLE	
+updated_date	TIMESTAMP	NULLABLE	The last time anything in this author object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
+works_api_url	STRING	NULLABLE	A URL that will get you a list of all this author’s works. We express this as an API URL (instead of just listing the works themselves) because sometimes an author’s publication list is too long to reasonably fit into a single author object.
+works_count	INTEGER	NULLABLE	The number of Works this this author has created.
+x_concepts	RECORD	REPEATED	The “x” in x_concepts is because it’s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint.
+x_concepts.display_name	STRING	NULLABLE	The English-language label of the concept.
+x_concepts.id	STRING	NULLABLE	The OpenAlex ID for this concept.
+x_concepts.level	INTEGER	NULLABLE	The level in the concept tree where this concept lives.
+x_concepts.score	FLOAT	NULLABLE	The strength of association between this author and the listed concept, from 0-100.
+x_concepts.wikidata	STRING	NULLABLE	The Wikidata ID for this concept.

@@ -1,0 +1,59 @@
+name	type	mode	description
+abbreviated_title	STRING	NULLABLE	An abbreviated title obtained from the ISSN Centre.
+alternate_titles	STRING	REPEATED	Alternate titles for this source, as obtained from the ISSN Centre and individual work records, like Crossref DOIs, that carry the source name as a string. These are commonly abbreviations or translations of the source’s canonical name.
+apc_prices	RECORD	REPEATED	List of objects, each with price (Integer) and currency (String). Article processing charge information, taken directly from DOAJ.
+apc_prices.currency	STRING	NULLABLE	Currency.
+apc_prices.price	INTEGER	NULLABLE	Price.
+apc_usd	INTEGER	NULLABLE	The source’s article processing charge in US Dollars, if available from DOAJ. The apc_usd value is calculated by taking the APC price (see apc_prices) with a currency of USD if it is available. If it’s not available, we convert the first available value from apc_prices into USD, using recent exchange rates.
+cited_by_count	INTEGER	NULLABLE	The total number of Works that cite a Work hosted in this source.
+country_code	STRING	NULLABLE	The country that this source is associated with, represented as an ISO two-letter country code.
+counts_by_year	RECORD	REPEATED	works_count and cited_by_count for each of the last ten years, binned by year. To put it another way: each year, you can see how many new works this source started hosting, and how many times any work in this source got cited. If the source was founded less than ten years ago, there will naturally be fewer than ten years in this list. Years with zero citations and zero works have been removed so you will need to add those in if you need them.
+counts_by_year.cited_by_count	INTEGER	NULLABLE	The total number of Works that cite a Work hosted in this source.
+counts_by_year.oa_works_count	INTEGER	NULLABLE	
+counts_by_year.works_count	INTEGER	NULLABLE	The number of Works this this source hosts.
+counts_by_year.year	INTEGER	NULLABLE	The year.
+created_date	DATE	NULLABLE	The date this Source object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
+display_name	STRING	NULLABLE	The name of the source.
+homepage_url	STRING	NULLABLE	The starting page for navigating the contents of this source; the homepage for this source’s website.
+host_organization	STRING	NULLABLE	The host organization for this source as an OpenAlex ID. This will be an Institution.id if the source is a repository, and a Publisher.id if the source is a journal, conference, or eBook platform (based on the type field).
+host_organization_lineage	STRING	REPEATED	OpenAlex IDs — See Publisher.lineage. This will only be included if the host_organization is a publisher (and not if the host_organization is an institution).
+host_organization_lineage_names	STRING	REPEATED	The names of the organisations in host_organization_lineage.
+host_organization_name	STRING	NULLABLE	The display_name from the host_organization, shown for convenience.
+id	STRING	NULLABLE	The OpenAlex ID for this source.
+ids	RECORD	NULLABLE	All the external identifiers that we know about for this source. IDs are expressed as URIs whenever possible.
+ids.fatcat	STRING	NULLABLE	this source’s Fatcat ID
+ids.issn	STRING	REPEATED	a list of this source’s ISSNs. Same as Source.issn
+ids.issn_l	STRING	NULLABLE	this source’s ISSN-L. Same as Source.issn_l
+ids.mag	INTEGER	NULLABLE	this source’s Microsoft Academic Graph ID
+ids.openalex	STRING	NULLABLE	this source’s OpenAlex ID. Same as Source.id
+ids.wikidata	STRING	NULLABLE	this source’s Wikidata ID
+is_in_doaj	BOOLEAN	NULLABLE	Whether this is a journal listed in the Directory of Open Access Journals (DOAJ).
+is_oa	BOOLEAN	NULLABLE	Whether this is currently fully-open-access source. This could be true for a preprint repository where everything uploaded is free to read, or for a Gold or Diamond open access journal, where all newly published Works are available for free under an open license. We say “currently” because the status of a source can change over time. It’s common for journals to “flip” to Gold OA, after which they may make only future articles open or also open their back catalogs. It’s entirely possible for a source to say is_oa: true, but for an article from last year to require a subscription.
+issn	STRING	REPEATED	The ISSNs used by this source. Many publications have multiple ISSNs (see above), so ISSN-L should be used when possible.
+issn_l	STRING	NULLABLE	The ISSN-L identifying this source. ISSN is a global and unique ID for serial publications. However, different media versions of a given publication (e.g., print and electronic) often have different ISSNs. This is why we can’t have nice things. The ISSN-L or Linking ISSN solves the problem by designating a single canonical ISSN for all media versions of the title. It’s usually the same as the print ISSN.
+publisher	STRING	NULLABLE	The name of this source’s publisher. Publisher is a tricky category, as journals often change publishers, publishers merge, publishers have subsidiaries (“imprints”), and of course no one is consistent in their naming. In the future, we plan to roll out support for a more structured publisher field, but for now it’s just a string.
+publisher_id	STRING	NULLABLE	
+societies	RECORD	REPEATED	Societies on whose behalf the source is published and maintained, obtained from our crowdsourced list. Thanks!
+societies.organization	STRING	NULLABLE	The society organisation name.
+societies.url	STRING	NULLABLE	The society URL.
+summary_stats	RECORD	NULLABLE	Citation metrics for this source.
+summary_stats.2yr_cited_by_count	INTEGER	NULLABLE	
+summary_stats.2yr_h_index	INTEGER	NULLABLE	
+summary_stats.2yr_i10_index	INTEGER	NULLABLE	
+summary_stats.2yr_mean_citedness	FLOAT	NULLABLE	
+summary_stats.2yr_works_count	INTEGER	NULLABLE	
+summary_stats.cited_by_count	INTEGER	NULLABLE	
+summary_stats.h_index	INTEGER	NULLABLE	
+summary_stats.i10_index	INTEGER	NULLABLE	
+summary_stats.oa_percent	FLOAT	NULLABLE	
+summary_stats.works_count	INTEGER	NULLABLE	
+type	STRING	NULLABLE	The type of source, which will be one of the following from the Type column: journal, repository, conference, ebook platform.
+updated_date	TIMESTAMP	NULLABLE	The last time anything in this Source object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
+works_api_url	STRING	NULLABLE	A URL that will get you a list of all this Source’s Works. We express this as an API URL (instead of just listing the works themselves) because sometimes a source’s publication list is too long to reasonably fit into a single Source object.
+works_count	INTEGER	NULLABLE	The number of Works this this Source hosts.
+x_concepts	RECORD	REPEATED	The “x” in x_concepts is because it’s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint. The Concepts most frequently applied to works hosted by this source. Each is represented as a dehydrated Concept object, with one additional attribute:
+x_concepts.display_name	STRING	NULLABLE	The English-language label of the concept.
+x_concepts.id	STRING	NULLABLE	The OpenAlex ID for this concept.
+x_concepts.level	INTEGER	NULLABLE	The level in the concept tree where this concept lives.
+x_concepts.score	FLOAT	NULLABLE	The strength of association between this source and the listed concept, from 0-100.
+x_concepts.wikidata	STRING	NULLABLE	The Wikidata ID for this concept.

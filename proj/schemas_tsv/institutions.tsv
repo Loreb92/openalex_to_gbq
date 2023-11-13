@@ -1,0 +1,81 @@
+name	type	mode	description
+associated_institutions	RECORD	REPEATED	
+associated_institutions.country_code	STRING	NULLABLE	The country where this institution is located, represented as an ISO two-letter country code.
+associated_institutions.display_name	STRING	NULLABLE	The primary name of the institution.
+associated_institutions.id	STRING	NULLABLE	The OpenAlex ID for this institution.
+associated_institutions.relationship	STRING	NULLABLE	The type of relationship between this institution and the listed institution. Possible values: parent, child, and related.
+associated_institutions.ror	STRING	NULLABLE	The ROR ID for this institution. The ROR (Research Organization Registry) identifier is a globally unique ID for research organization. ROR is the successor to GRiD, which is no longer being updated.
+associated_institutions.type	STRING	NULLABLE	The institution’s primary type, using the ROR “type” controlled vocabulary. Possible values are: Education, Healthcare, Company, Archive, Nonprofit, Government, Facility, and Other.
+cited_by_count	INTEGER	NULLABLE	The total number Works that cite a work created by an author affiliated with this institution. Or less formally: the number of citations this institution has collected.
+country_code	STRING	NULLABLE	The country where this institution is located, represented as an ISO two-letter country code.
+counts_by_year	RECORD	REPEATED	works_count and cited_by_count for each of the last ten years, binned by year. To put it another way: each year, you can see how many new works this venue started hosting, and how many times any work in this venue got cited.
+counts_by_year.cited_by_count	INTEGER	NULLABLE	The total number Works that cite a work created by an author affiliated with this institution. Or less formally: the number of citations this institution has collected.
+counts_by_year.oa_works_count	INTEGER	NULLABLE	
+counts_by_year.works_count	INTEGER	NULLABLE	The number of Works created by authors affiliated with this institution. Or less formally: the number of works coming out of this institution.
+counts_by_year.year	INTEGER	NULLABLE	The year.
+created_date	DATE	NULLABLE	The date this Institution object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
+display_name	STRING	NULLABLE	The primary name of the institution.
+display_name_acronyms	STRING	REPEATED	Acronyms or initialisms that people sometimes use instead of the full display_name.
+display_name_alternatives	STRING	REPEATED	Other names people may use for this institution.
+geo	RECORD	NULLABLE	A bunch of stuff we know about the location of this institution
+geo.city	STRING	NULLABLE	The city where this institution lives.
+geo.country	STRING	NULLABLE	The country where this institution lives.
+geo.country_code	STRING	NULLABLE	The country where this institution lives, represented as an ISO two-letter country code.
+geo.geonames_city_id	STRING	NULLABLE	The city where this institution lives, as a GeoNames database ID.
+geo.latitude	FLOAT	NULLABLE	Does what it says.
+geo.longitude	FLOAT	NULLABLE	Does what it says.
+geo.region	STRING	NULLABLE	The sub-national region (state, province) where this institution lives.
+homepage_url	STRING	NULLABLE	The URL for institution’s primary homepage
+id	STRING	NULLABLE	The OpenAlex ID for this institution.
+ids	RECORD	NULLABLE	All the persistent identifiers (PIDs) that we know about for this institution, as key: value pairs, where key is the PID namespace, and value is the PID. IDs are expressed as URIs where possible. They’re all strings except for mag, which is a long integer.
+ids.grid	STRING	NULLABLE	this institution’s GRID ID
+ids.mag	INTEGER	NULLABLE	this institution’s Microsoft Academic Graph ID
+ids.openalex	STRING	NULLABLE	this institution’s OpenAlex ID. Same as Institution.id
+ids.ror	STRING	NULLABLE	this institution’s ROR ID. Same as Institution.ror
+ids.wikidata	STRING	NULLABLE	this institution’s Wikidata ID
+ids.wikipedia	STRING	NULLABLE	this institution’s Wikipedia page URL
+image_thumbnail_url	STRING	NULLABLE	Same as image_url, but it’s a smaller image.
+image_url	STRING	NULLABLE	URL where you can get an image representing this institution. Usually this is hosted on Wikipedia, and usually it’s a seal or logo.
+international	RECORD	NULLABLE	Translation of the display_name and description into multiple languages.
+international.display_name	RECORD	NULLABLE	The institution’s display name in different languages. Derived from the wikipedia page for the institution in the given language.
+international.display_name.keys	STRING	REPEATED	The language codes in wikidata language code format.
+international.display_name.values	STRING	REPEATED	The translated display_names in each language.
+lineage	STRING	REPEATED	OpenAlex IDs of institutions. The list will include this institution’s ID, as well as any parent institutions. If this institution has no parent institutions, this list will only contain its own ID.
+repositories	RECORD	REPEATED	Repositories (Sources with type: repository) that have this institution as their host_organization
+repositories.display_name	STRING	NULLABLE	The repositories display name.
+repositories.host_organization	STRING	NULLABLE	The OpenAlex ID of the host organisation.
+repositories.host_organization_lineage	STRING	REPEATED	OpenAlex IDs — See Publisher.lineage. This will only be included if the host_organization is a publisher (and not if the host_organization is an institution).
+repositories.host_organization_lineage_names	STRING	REPEATED	The names of the organisations in host_organization_lineage.
+repositories.host_organization_name	STRING	NULLABLE	The display_name from the host_organization, shown for convenience.
+repositories.id	STRING	NULLABLE	The OpenAlex ID of the repository.
+repositories.issn	STRING	REPEATED	
+repositories.issn_l	STRING	NULLABLE	
+repositories.publisher	STRING	NULLABLE	
+repositories.publisher_id	STRING	NULLABLE	
+repositories.type	STRING	NULLABLE	
+roles	RECORD	REPEATED	
+roles.id	STRING	NULLABLE	
+roles.role	STRING	NULLABLE	
+roles.works_count	INTEGER	NULLABLE	
+ror	STRING	NULLABLE	The ROR ID for this institution. The ROR (Research Organization Registry) identifier is a globally unique ID for research organization. ROR is the successor to GRiD, which is no longer being updated.
+summary_stats	RECORD	NULLABLE	Citation metrics for this institutions.
+summary_stats.2yr_cited_by_count	INTEGER	NULLABLE	
+summary_stats.2yr_h_index	INTEGER	NULLABLE	
+summary_stats.2yr_i10_index	INTEGER	NULLABLE	
+summary_stats.2yr_mean_citedness	FLOAT	NULLABLE	
+summary_stats.2yr_works_count	INTEGER	NULLABLE	
+summary_stats.cited_by_count	INTEGER	NULLABLE	
+summary_stats.h_index	INTEGER	NULLABLE	
+summary_stats.i10_index	INTEGER	NULLABLE	
+summary_stats.oa_percent	FLOAT	NULLABLE	
+summary_stats.works_count	INTEGER	NULLABLE	
+type	STRING	NULLABLE	The institution’s primary type, using the ROR “type” controlled vocabulary. Possible values are: Education, Healthcare, Company, Archive, Nonprofit, Government, Facility, and Other.
+updated_date	TIMESTAMP	NULLABLE	The last time anything in this Institution changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
+works_api_url	STRING	NULLABLE	A URL that will get you a list of all the Works affiliated with this institution. We express this as an API URL (instead of just listing the Works themselves) because most institutions have way too many works to reasonably fit into a single return object.
+works_count	INTEGER	NULLABLE	The number of Works created by authors affiliated with this institution. Or less formally: the number of works coming out of this institution.
+x_concepts	RECORD	REPEATED	The “x” in x_concepts is because it’s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint. The Concepts most frequently applied to works affiliated with this institution. Each is represented as a dehydrated Concept object, with one additional attribute
+x_concepts.display_name	STRING	NULLABLE	The English-language label of the concept.
+x_concepts.id	STRING	NULLABLE	The OpenAlex ID for this concept.
+x_concepts.level	INTEGER	NULLABLE	The level in the concept tree where this concept lives.
+x_concepts.score	FLOAT	NULLABLE	The strength of association between this institution and the listed concept, from 0-100.
+x_concepts.wikidata	STRING	NULLABLE	The Wikidata ID for this concept.

@@ -148,7 +148,7 @@ primary_location.source.issn	STRING	REPEATED	The ISSNs used by this source. Many
 primary_location.source.issn_l	STRING	NULLABLE	The ISSN-L identifying this source. This is the Canonical External ID for sources.
 primary_location.source.publisher	STRING	NULLABLE	The publisher name.
 primary_location.source.publisher_id	STRING	NULLABLE	The OpenAlex ID of the publisher.
-primary_location.source.publisher_lineage   STRING  REPEATED    The OpenAlex ID a publisher.
+primary_location.source.publisher_lineage	STRING	REPEATED	The OpenAlex ID a publisher.
 primary_location.source.type	STRING	NULLABLE	The type of source.
 primary_location.version	STRING	NULLABLE	The version of the work, based on the DRIVER Guidelines versioning scheme. Possible values are:. publishedVersion: The document’s version of record. This is the most authoritative version. acceptedVersion: The document after having completed peer review and being officially accepted for publication. It will lack publisher formatting, but the content should be interchangeable with the that of the publishedVersion. submittedVersion: the document as submitted to the publisher by the authors, but before peer-review. Its content may differ significantly from that of the accepted article.
 publication_date	DATE	NULLABLE	The day when this work was published, formatted as an ISO 8601 date. Where different publication dates exist, we select the earliest available date of electronic publication. This date applies to the version found at Work.url. The other versions, found in Work.locations, may have been published at different (earlier) dates.

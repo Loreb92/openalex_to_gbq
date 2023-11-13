@@ -886,7 +886,7 @@
                     {
                         "name": "host_institution_lineage",
                         "type": "STRING",
-                        "mode": "NULLABLE",
+                        "mode": "REPEATED",
                         "description": "The OpenAlex ID for an Institution."
                     },
                     {

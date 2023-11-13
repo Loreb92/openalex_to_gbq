@@ -81,6 +81,7 @@ counts_by_year.year	INTEGER	NULLABLE	The year.
 created_date	DATE	NULLABLE	The date this Work object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
 display_name	STRING	NULLABLE	Exactly the same as Work.title. It’s useful for Works to include a display_name property, since all the other entities have one.
 doi	STRING	NULLABLE	The DOI for the work. This is the Canonical External ID for works. Occasionally, a work has more than one DOI–for example, there might be one DOI for a preprint version hosted on bioRxiv, and another DOI for the published version. However, this field always has just one DOI, the DOI for the published work.
+doi_registration_agency	STRING	NULLABLE	
 funders	RECORD	REPEATED	
 funders.awards	STRING	REPEATED	
 funders.display_name	STRING	NULLABLE	

@@ -512,6 +512,12 @@
         "description": "The DOI for the work. This is the Canonical External ID for works. Occasionally, a work has more than one DOI\u2013for example, there might be one DOI for a preprint version hosted on bioRxiv, and another DOI for the published version. However, this field always has just one DOI, the DOI for the published work."
     },
     {
+        "name": "doi_registration_agency",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": ""
+    },
+    {
         "name": "fulltext_origin",
         "type": "STRING",
         "mode": "NULLABLE",

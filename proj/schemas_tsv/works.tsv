@@ -12,6 +12,7 @@ apc_paid.currency	STRING	NULLABLE
 apc_paid.price	INTEGER	NULLABLE	
 apc_paid.price_usd	INTEGER	NULLABLE	APC converted to USD
 apc_paid.provenance	STRING	NULLABLE	
+apc_paid.value_usd	INTEGER	NULLABLE	
 authorships	RECORD	REPEATED	List of Authorship objects, each representing an author and their institution.
 authorships.author	RECORD	NULLABLE	An author of this work, as a dehydrated Author object.
 authorships.author.display_name	STRING	NULLABLE	The name of the author as a single string.

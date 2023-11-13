@@ -87,6 +87,7 @@ grants	RECORD	REPEATED	List of grant objects, which include the Funder and the a
 grants.award_id	STRING	NULLABLE	
 grants.funder	STRING	NULLABLE	
 grants.funder_display_name	STRING	NULLABLE	
+has_fulltext	BOOLEAN	NULLABLE	Set to true if the work's full text is searchable in OpenAlex.
 id	STRING	NULLABLE	The OpenAlex ID for this work.
 ids	RECORD	NULLABLE	All the persistent identifiers (PIDs) that we know about for this work, as key: value pairs, where key is the PID namespace, and value is the PID. IDs are expressed as URIs where possible.
 ids.doi	STRING	NULLABLE	The DOI. Same as Work.doi

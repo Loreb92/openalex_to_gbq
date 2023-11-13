@@ -556,6 +556,12 @@
         ]
     },
     {
+        "name": "has_fulltext",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE",
+        "description": "Set to true if the work's full text is searchable in OpenAlex."
+    },
+    {
         "name": "id",
         "type": "STRING",
         "mode": "NULLABLE",

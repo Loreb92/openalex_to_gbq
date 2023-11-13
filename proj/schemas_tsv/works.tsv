@@ -133,6 +133,7 @@ open_access.oa_status	STRING	NULLABLE	The Open Access (OA) status of this work. 
 open_access.oa_url	STRING	NULLABLE	The best Open Access (OA) URL for this work. Although there are many ways to define OA, in this context an OA URL is one where you can read the fulltext of this work without needing to pay money or log in. The “best” such URL is the one closest to the version of record. This URL might be a direct link to a PDF, or it might be to a landing page that links to the free PDF
 primary_location	RECORD	NULLABLE	A Location object with the primary location of this work.
 primary_location.doi	STRING	NULLABLE	The DOI of the work.
+primary_location.issn	STRING	NULLABLE	The ISSN of the work.
 primary_location.is_oa	BOOLEAN	NULLABLE	True if this work is Open Access (OA).
 primary_location.is_accepted	BOOLEAN	NULLABLE	True if this location's version is either acceptedVersion or publishedVersion; otherwise false.
 primary_location.is_published	BOOLEAN	NULLABLE	True if this location's version is publishedVersion; otherwise false.

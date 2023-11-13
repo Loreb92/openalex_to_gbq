@@ -202,6 +202,12 @@
         "description": "A Location object with the best available open access location for this work.",
         "fields": [
             {
+                "name": "doi",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "is_accepted",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE",

@@ -408,6 +408,12 @@
         ]
     },
     {
+        "name": "concepts_count",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Number of concepts for this work."
+    },
+    {
         "name": "corresponding_author_ids",
         "type": "STRING",
         "mode": "REPEATED",

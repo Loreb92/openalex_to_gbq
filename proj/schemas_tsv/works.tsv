@@ -59,6 +59,7 @@ biblio.volume	STRING	NULLABLE
 cited_by_api_url	STRING	NULLABLE	
 cited_by_count	INTEGER	NULLABLE	The number of citations to this work. These are the times that other works have cited this work: Other works ➞ This work.
 concepts	RECORD	REPEATED	List of dehydrated Concept objects.  Each Concept object in the list also has one additional property
+concepts_count	INTEGER	NULLABLE	Number of concepts for this work.
 concepts.display_name	STRING	NULLABLE	The English-language label of the concept.
 concepts.id	STRING	NULLABLE	The OpenAlex ID for this concept.
 concepts.level	INTEGER	NULLABLE	The level in the concept tree where this concept lives.

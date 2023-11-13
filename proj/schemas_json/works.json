@@ -700,6 +700,12 @@
         "description": "A list of Location objects describing all unique places where this work lives.",
         "fields": [
             {
+                "name": "doi",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "The DOI of the work."
+            },
+            {
                 "name": "is_accepted",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE",

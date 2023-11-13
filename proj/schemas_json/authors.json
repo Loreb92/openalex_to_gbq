@@ -230,6 +230,12 @@
         ]
     },
     {
+        "name": "updated",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": ""
+    },
+    {
         "name": "updated_date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE",

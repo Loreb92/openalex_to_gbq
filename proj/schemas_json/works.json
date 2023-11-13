@@ -884,6 +884,12 @@
                         "description": "The name of the source."
                     },
                     {
+                        "name": "host_institution_lineage_names",
+                        "type": "STRING",
+                        "mode": "REPEATED",
+                        "description": "The names of the institutions in host_institution_lineage."
+                    },
+                    {
                         "name": "host_organization",
                         "type": "STRING",
                         "mode": "NULLABLE",

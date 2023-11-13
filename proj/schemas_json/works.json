@@ -1042,6 +1042,12 @@
         "description": "OpenAlex IDs for works that this work cites. These are citations that go from this work out to another work: This work \u279e Other works."
     },
     {
+        "name": "referenced_works_count",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "The number of works referenced by this work."
+    },
+    {
         "name": "related_works",
         "type": "STRING",
         "mode": "REPEATED",

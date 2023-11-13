@@ -166,6 +166,7 @@ primary_location.version	STRING	NULLABLE	The version of the work, based on the D
 publication_date	DATE	NULLABLE	The day when this work was published, formatted as an ISO 8601 date. Where different publication dates exist, we select the earliest available date of electronic publication. This date applies to the version found at Work.url. The other versions, found in Work.locations, may have been published at different (earlier) dates.
 publication_year	INTEGER	NULLABLE	The year this work was published.
 referenced_works	STRING	REPEATED	OpenAlex IDs for works that this work cites. These are citations that go from this work out to another work: This work ➞ Other works.
+referenced_works_count	INTEGER	NULLABLE	The number of works referenced by this work.
 related_works	STRING	REPEATED	OpenAlex IDs for works related to this work.
 summary_stats	RECORD	NULLABLE	
 summary_stats.2yr_cited_by_count	INTEGER	NULLABLE	

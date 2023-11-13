@@ -50,6 +50,7 @@ best_oa_location.source.issn_l	STRING	NULLABLE	The ISSN-L identifying this sourc
 best_oa_location.source.publisher	STRING	NULLABLE	
 best_oa_location.source.publisher_id	STRING	NULLABLE	
 best_oa_location.source.publisher_lineage	STRING	REPEATED	
+best_oa_location.source.publisher_lineage_names	STRING	REPEATED	
 best_oa_location.source.type	STRING	NULLABLE	The type of source.
 best_oa_location.version	STRING	NULLABLE	The version of the work, based on the DRIVER Guidelines versioning scheme.
 biblio	RECORD	NULLABLE	Old-timey bibliographic info for this work. This is mostly useful only in citation/reference contexts. These are all strings because sometimes you’ll get fun values like “Spring” and “Inside cover.”

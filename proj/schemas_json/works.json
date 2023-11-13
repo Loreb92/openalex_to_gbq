@@ -824,6 +824,12 @@
         "description": "A Location object with the primary location of this work.",
         "fields": [
             {
+                "name": "is_accepted",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "description": "True if this location's version is either acceptedVersion or publishedVersion; otherwise false."
+            },
+            {
                 "name": "is_oa",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE",

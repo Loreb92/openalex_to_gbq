@@ -36,13 +36,31 @@ Note: `venues` and `authors` do not require convertion and can be uploaded as is
 gsutil -m cp -r openalex-processed/data/*git  gs://my-bucket/dest
 ```
 
-4. Create the bigquery table
+4. Create JSON schema files
 
-Use provided schema files (no need to upload to GCS)
+The JSON schema files are needed to specify the structure of the database. Given the fact that the OpenAlex original data may change the database structure from one version to the other, this step may take some time to adapt the structure.
 
+The starting point has been the schema tables provided at https://academic-observatory-workflows.readthedocs.io/en/latest/telescopes/openalex.html. The schema is in a tabular form and can be transformed to JSON using the `convert_tsv_to_json_schema.py` script:
+
+```
+python convert_tsv_to_json_schema.py proj/schemas_tsv proj/schemas_json
+```
+
+This script converts all the `.tsv` files in the folder `proj/schemas_tsv` into JSON schema file that are saved in the folder `proj/schemas_json`. 
+
+
+5. Create the bigquery table
+
+To upload each table, run the following command:
 ```
 bq load --source_format=NEWLINE_DELIMITED_JSON -project_id=<PROJID> --replace=true openalex.<TABLE> gs://my-bucket/dest* <LOCAL SCHEMA>
 ```
+where `<LOCAL SCHEMA>` is the JSON schema file for the table `<TABLE>` created in the previous step.
+
+Note.
+
+Steps 4. and 5. may be repeated several times until the correct schema files are provided. Indeed, the command run at step 5. may fail if the schema file is not correct. In this case, the error message will provide information about the error. The schema file can be corrected in the `.tsv` file and transformed again into JSON. Then, step 5. can be repeated.
+
 
 ## Notes
 - Inverted Abstracts are converted to strings.

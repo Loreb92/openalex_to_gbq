@@ -718,6 +718,12 @@
         "description": "A list of Location objects describing all unique places where this work lives.",
         "fields": [
             {
+                "name": "display_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "doi",
                 "type": "STRING",
                 "mode": "NULLABLE",

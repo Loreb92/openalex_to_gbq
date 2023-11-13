@@ -638,6 +638,12 @@
         "description": "All the persistent identifiers (PIDs) that we know about for this work, as key: value pairs, where key is the PID namespace, and value is the PID. IDs are expressed as URIs where possible.",
         "fields": [
             {
+                "name": "arxiv_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "The arXiv ID."
+            },
+            {
                 "name": "doi",
                 "type": "STRING",
                 "mode": "NULLABLE",

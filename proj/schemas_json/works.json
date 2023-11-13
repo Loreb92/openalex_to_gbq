@@ -80,6 +80,12 @@
                 "description": ""
             },
             {
+                "name": "value",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "value_usd",
                 "type": "INTEGER",
                 "mode": "NULLABLE",

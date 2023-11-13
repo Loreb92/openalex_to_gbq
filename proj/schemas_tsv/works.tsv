@@ -130,6 +130,7 @@ locations.source.issn_l	STRING	NULLABLE	The ISSN-L identifying this source. This
 locations.source.publisher	STRING	NULLABLE	The publisher name.
 locations.source.publisher_id	STRING	NULLABLE	The OpenAlex publisher ID.
 locations.source.publisher_lineage	STRING	REPEATED	
+locations.source.publisher_lineage_names	STRING	REPEATED	
 locations.source.type	STRING	NULLABLE	The type of source.
 locations.version	STRING	NULLABLE	The version of the work, based on the DRIVER Guidelines versioning scheme. Possible values are: publishedVersion: The document’s version of record. This is the most authoritative version. acceptedVersion: The document after having completed peer review and being officially accepted for publication. It will lack publisher formatting, but the content should be interchangeable with the that of the publishedVersion. submittedVersion: the document as submitted to the publisher by the authors, but before peer-review. Its content may differ significantly from that of the accepted article.
 locations_count	INTEGER	NULLABLE	Number of locations for this work.

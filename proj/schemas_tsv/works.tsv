@@ -115,6 +115,7 @@ language	STRING	NULLABLE	The language of the work in ISO 639-1 format. The langu
 license	STRING	NULLABLE	The license applied to this work at this host. Most toll-access works don’t have an explicit license (they’re under “all rights reserved” copyright), so this field generally has content only if is_oa is true.
 locations	RECORD	REPEATED	A list of Location objects describing all unique places where this work lives.
 locations.doi	STRING	NULLABLE	The DOI of the work.
+locations.id	STRING	NULLABLE	
 locations.is_accepted	BOOLEAN	NULLABLE	True if this location’s version is either acceptedVersion or publishedVersion; otherwise false.
 locations.is_oa	BOOLEAN	NULLABLE	True if this work is Open Access (OA).
 locations.is_published	BOOLEAN	NULLABLE	True if this location’s version is publishedVersion; otherwise false.

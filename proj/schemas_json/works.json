@@ -724,6 +724,12 @@
                 "description": "The DOI of the work."
             },
             {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "is_accepted",
                 "type": "BOOLEAN",
                 "mode": "NULLABLE",

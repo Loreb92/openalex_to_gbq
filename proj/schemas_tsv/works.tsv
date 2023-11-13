@@ -126,6 +126,7 @@ locations.source.host_organization_lineage_names	STRING	REPEATED	The names of th
 locations.source.host_organization_name	STRING	NULLABLE	The display_name from the host_organization, shown for convenience.
 locations.source.id	STRING	NULLABLE	The OpenAlex ID for this source.
 locations.source.is_in_doaj	BOOLEAN	NULLABLE	Whether this is a journal listed in the Directory of Open Access Journals (DOAJ).
+locations.source.is_oa	BOOLEAN	NULLABLE	
 locations.source.issn	STRING	REPEATED	The ISSNs used by this source. Many publications have multiple ISSNs (see above), so ISSN-L should be used when possible.
 locations.source.issn_l	STRING	NULLABLE	The ISSN-L identifying this source. This is the Canonical External ID for sources.
 locations.source.publisher	STRING	NULLABLE	The publisher name.

@@ -882,6 +882,12 @@
                 ]
             },
             {
+                "name": "type",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "version",
                 "type": "STRING",
                 "mode": "NULLABLE",

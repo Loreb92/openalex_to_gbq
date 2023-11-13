@@ -132,6 +132,7 @@ open_access.oa_url	STRING	NULLABLE	The best Open Access (OA) URL for this work. 
 primary_location	RECORD	NULLABLE	A Location object with the primary location of this work.
 primary_location.is_oa	BOOLEAN	NULLABLE	True if this work is Open Access (OA).
 primary_location.is_accepted	BOOLEAN	NULLABLE	True if this location's version is either acceptedVersion or publishedVersion; otherwise false.
+primary_location.is_published	BOOLEAN	NULLABLE	True if this location's version is publishedVersion; otherwise false.
 primary_location.landing_page_url	STRING	NULLABLE	The landing page URL for this location.
 primary_location.license	STRING	NULLABLE	The location’s publishing license. This can be a Create Commons license such as cc0 or cc-by, a publisher-specific license, or null which means we are not able to determine a license for this location.
 primary_location.pdf_url	STRING	NULLABLE	A URL where you can find this location as a PDF.

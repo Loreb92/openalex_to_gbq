@@ -836,6 +836,12 @@
                 "description": "True if this work is Open Access (OA)."
             },
             {
+                "name": "is_published",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "description": "True if this location's version is publishedVersion; otherwise false."
+            },
+            {
                 "name": "landing_page_url",
                 "type": "STRING",
                 "mode": "NULLABLE",

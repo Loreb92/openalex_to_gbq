@@ -7,6 +7,7 @@ apc_list.currency	STRING	NULLABLE
 apc_list.price	INTEGER	NULLABLE	
 apc_list.price_usd	INTEGER	NULLABLE	APC converted to USD
 apc_list.provenance	STRING	NULLABLE	
+apc_list.value_usd	INTEGER	NULLABLE	The APC converted into USD
 apc_paid	RECORD	NULLABLE	Object: Information about the paid APC (article processing charge) for this work. You can find the listed APC price (when we know it) for a given work using apc_list. However, authors don’t always pay the listed price; often they get a discounted price from publishers. So it’s useful to know the APC actually paid by authors, as distinct from the list price. This is our effort to provide this. Our best source for the actually paid price is the OpenAPC project. Where available, we use that data, and so apc_paid.provenance is openapc. Where OpenAPC data is unavailable (and unfortunately this is common) we make our best guess by assuming the author paid the APC list price, and apc_paid.provenance will be set to wherever we got the list price from.
 apc_paid.currency	STRING	NULLABLE	
 apc_paid.price	INTEGER	NULLABLE	

@@ -48,6 +48,12 @@
                 "type": "STRING",
                 "mode": "NULLABLE",
                 "description": ""
+            },
+            {
+                "name": "value_usd",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "description": "The APC converted into USD"
             }
         ]
     },

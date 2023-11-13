@@ -39,6 +39,7 @@ best_oa_location.license	STRING	NULLABLE	The location’s publishing license. Th
 best_oa_location.pdf_url	STRING	NULLABLE	A URL where you can find this location as a PDF.
 best_oa_location.source	RECORD	NULLABLE	Information about the source of this location, as a DehydratedSource object.
 best_oa_location.source.display_name	STRING	NULLABLE	The name of the source.
+best_oa_location.source.host_institution_lineage	STRING	REPEATED	
 best_oa_location.source.host_institution_lineage_names	STRING	REPEATED	
 best_oa_location.source.host_organization	STRING	NULLABLE	The host organization for this source as an OpenAlex ID. This will be an Institution.id if the source is a repository, and a Publisher.id if the source is a journal, conference, or eBook platform (based on the type field).
 best_oa_location.source.host_organization_lineage	STRING	REPEATED	OpenAlex IDs — See Publisher.lineage. This will only be included if the host_organization is a publisher (and not if the host_organization is an institution).

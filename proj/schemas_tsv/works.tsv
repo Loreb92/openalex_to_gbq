@@ -32,6 +32,7 @@ authorships.is_corresponding	BOOLEAN	NULLABLE
 authorships.raw_affiliation_string	STRING	NULLABLE	This author’s affiliation as it originally came to us (on a webpage or in an API), as a raw unformatted string.
 authorships.raw_affiliation_strings	STRING	REPEATED	
 authorships.raw_author_name	STRING	NULLABLE	This author’s name as it originally came to us (on a webpage or in an API), as a raw unformatted string.
+authorships_truncated	BOOLEAN	NULLABLE	True if this work is Open Access (OA).
 authors_count	INTEGER	NULLABLE	Number of authors for a work.
 best_oa_location	RECORD	NULLABLE	A Location object with the best available open access location for this work.
 best_oa_location.doi	STRING	NULLABLE	

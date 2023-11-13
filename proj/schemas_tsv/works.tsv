@@ -198,6 +198,7 @@ sustainable_development_goals.score	FLOAT	NULLABLE	All of the SDGs with a predic
 title	STRING	NULLABLE	The title of this work.
 type	STRING	NULLABLE	The type or genre of the work. This field uses Crossref’s “type” controlled vocabulary; you can see all possible values via the Crossref api here: https://api.crossref.org/types . Where possible, we just pass along Crossref’s type value for each work. When that’s impossible (eg the work isn’t in Crossref), we do our best to figure out the type ourselves. Unfortunately the accuracy of Crossref’s data for this isn’t great, and ours isn’t much better. We’re working to develop better type classification.
 type_crossref	STRING	NULLABLE	Legacy type information, using Crossref’s “type” controlled vocabulary.
+updated	TIMESTAMP	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this Work object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 url	STRING	NULLABLE	The URL where you can access this work.
 version	STRING	NULLABLE	The version of the work, based on the DRIVER Guidelines versioning scheme. Possible values are: publishedVersion, acceptedVersion or submittedVersion.

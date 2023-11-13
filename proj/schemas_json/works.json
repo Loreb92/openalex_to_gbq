@@ -1238,6 +1238,12 @@
         "description": "Legacy type information, using Crossref\u2019s \u201ctype\u201d controlled vocabulary."
     },
     {
+        "name": "updated",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": ""
+    },
+    {
         "name": "updated_date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE",

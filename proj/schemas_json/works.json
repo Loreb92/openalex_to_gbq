@@ -82,6 +82,12 @@
         ]
     },
     {
+        "name": "authors_count",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Number of authors for a work."
+    },
+    {
         "name": "authorships",
         "type": "RECORD",
         "mode": "REPEATED",

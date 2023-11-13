@@ -950,6 +950,12 @@
                         "description": "The OpenAlex ID a publisher."
                     },
                     {
+                        "name": "publisher_lineage_names",
+                        "type": "STRING",
+                        "mode": "REPEATED",
+                        "description": "The names of the publishers in publisher_lineage."
+                    },
+                    {
                         "name": "type",
                         "type": "STRING",
                         "mode": "NULLABLE",

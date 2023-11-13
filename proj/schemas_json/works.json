@@ -748,6 +748,12 @@
                         "description": "The name of the source."
                     },
                     {
+                        "name": "host_institution_lineage",
+                        "type": "STRING",
+                        "mode": "REPEATED",
+                        "description": ""
+                    },
+                    {
                         "name": "host_institution_lineage_names",
                         "type": "STRING",
                         "mode": "REPEATED",

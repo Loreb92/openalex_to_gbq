@@ -20,6 +20,7 @@ authorships.author.display_name	STRING	NULLABLE	The name of the author as a sing
 authorships.author.id	STRING	NULLABLE	The OpenAlex ID for this author.
 authorships.author.orcid	STRING	NULLABLE	The ORCID for this author. ORCID global and unique ID for authors.
 authorships.author_position	STRING	NULLABLE	A summarized description of this author’s position in the work’s author list. Possible values are first, middle, and last. It’s not strictly necessary, because author order is already implicitly recorded by the list order of Authorship objects; however it’s useful in some contexts to have this as a categorical value.
+authorships.countries	STRING	REPEATED	The country or countries for this author.
 authorships.institutions	RECORD	REPEATED	The institutional affiliations this author claimed in the context of this work, as dehydrated Institution objects.
 authorships.institutions.country_code	STRING	NULLABLE	The country where this institution is located, represented as an ISO two-letter country code.
 authorships.institutions.display_name	STRING	NULLABLE	The primary name of the institution.

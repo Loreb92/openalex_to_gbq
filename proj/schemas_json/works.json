@@ -134,6 +134,12 @@
                 "description": "A summarized description of this author\u2019s position in the work\u2019s author list. Possible values are first, middle, and last. It\u2019s not strictly necessary, because author order is already implicitly recorded by the list order of Authorship objects; however it\u2019s useful in some contexts to have this as a categorical value."
             },
             {
+                "name": "countries",
+                "type": "STRING",
+                "mode": "REPEATED",
+                "description": "The country or countries for this author."
+            },
+            {
                 "name": "institutions",
                 "type": "RECORD",
                 "mode": "REPEATED",

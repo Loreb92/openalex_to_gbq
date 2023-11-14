@@ -35,3 +35,9 @@ summary_stats.oa_percent	FLOAT	NULLABLE
 summary_stats.works_count	INTEGER	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this funder object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_count	INTEGER	NULLABLE	The number of works linked to this funder.
+x_concepts	RECORD	REPEATED	The concepts most frequently applied to works created by this author. Will be deprecated soon with no communication.
+x_concepts.concept_id	STRING	NULLABLE	
+x_concepts.display_name	STRING	NULLABLE	
+x_concepts.level	INTEGER	NULLABLE	
+x_concepts.score	FLOAT	NULLABLE	
+x_concepts.wikidata	STRING	NULLABLE	

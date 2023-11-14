@@ -222,5 +222,43 @@
         "type": "INTEGER",
         "mode": "NULLABLE",
         "description": "The number of works linked to this funder."
+    },
+    {
+        "name": "x_concepts",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "description": "The concepts most frequently applied to works created by this author. Will be deprecated soon with no communication.",
+        "fields": [
+            {
+                "name": "concept_id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
+                "name": "display_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
+                "name": "level",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
+                "name": "score",
+                "type": "FLOAT",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
+                "name": "wikidata",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": ""
+            }
+        ]
     }
 ]

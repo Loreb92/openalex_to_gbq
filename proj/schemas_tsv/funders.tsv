@@ -14,7 +14,9 @@ grants_count	INTEGER	NULLABLE	The number of grants linked to this funder.
 homepage_url	STRING	NULLABLE	The URL for this funder’s primary homepage.
 id	STRING	NULLABLE	The OpenAlex ID for this funder.
 ids	RECORD	NULLABLE	All the external identifiers that we know about for this funder. IDs are expressed as URIs whenever possible.
-ids.openalex	STRING	NULLABLE	this funder’s OpenAlex ID
+ids.crossref	STRING	NULLABLE	This funder’s Crossref ID.
+ids.doi	STRING	NULLABLE	This funder’s DOI.
+ids.openalex	STRING	NULLABLE	This funder’s OpenAlex ID.
 ids.ror	STRING	NULLABLE	this funder’s ROR ID
 ids.wikidata	STRING	NULLABLE	this funder’s Wikidata ID
 image_thumbnail_url	STRING	NULLABLE	Same as image_url, but it’s a smaller image. This is usually a hotlink to a wikimedia image. You can change the width=300 parameter in the URL if you want a different thumbnail size.

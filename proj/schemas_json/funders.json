@@ -92,10 +92,22 @@
         "description": "All the external identifiers that we know about for this funder. IDs are expressed as URIs whenever possible.",
         "fields": [
             {
+                "name": "crossref",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "This funder\u2019s Crossref ID."
+            },
+            {
+                "name": "doi",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "This funder\u2019s DOI."
+            },
+            {
                 "name": "openalex",
                 "type": "STRING",
                 "mode": "NULLABLE",
-                "description": "this funder\u2019s OpenAlex ID"
+                "description": "This funder\u2019s OpenAlex ID."
             },
             {
                 "name": "ror",

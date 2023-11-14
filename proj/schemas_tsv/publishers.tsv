@@ -39,3 +39,9 @@ summary_stats.oa_percent	FLOAT	NULLABLE
 summary_stats.works_count	INTEGER	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this publisher object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_count	INTEGER	NULLABLE	The number of works published by this publisher.
+x_concepts	RECORD	REPEATED	The “x” in x_concepts is because it’s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint. The Concepts most frequently applied to works affiliated with this institution. Each is represented as a dehydrated Concept object, with one additional attribute
+x_concepts.display_name	STRING	NULLABLE	The English-language label of the concept.
+x_concepts.id	STRING	NULLABLE	The OpenAlex ID for this concept.
+x_concepts.level	INTEGER	NULLABLE	The level in the concept tree where this concept lives.
+x_concepts.score	FLOAT	NULLABLE	The strength of association between this institution and the listed concept, from 0-100.
+x_concepts.wikidata	STRING	NULLABLE	The Wikidata ID for this concept.

@@ -248,5 +248,43 @@
         "type": "INTEGER",
         "mode": "NULLABLE",
         "description": "The number of works published by this publisher."
+    },
+    {
+        "name": "x_concepts",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "description": "The \u201cx\u201d in x_concepts is because it\u2019s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint. The Concepts most frequently applied to works affiliated with this institution. Each is represented as a dehydrated Concept object, with one additional attribute",
+        "fields": [
+            {
+                "name": "display_name",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "The English-language label of the concept."
+            },
+            {
+                "name": "id",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "The OpenAlex ID for this concept."
+            },
+            {
+                "name": "level",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "description": "The level in the concept tree where this concept lives."
+            },
+            {
+                "name": "score",
+                "type": "FLOAT",
+                "mode": "NULLABLE",
+                "description": "The strength of association between this institution and the listed concept, from 0-100."
+            },
+            {
+                "name": "wikidata",
+                "type": "STRING",
+                "mode": "NULLABLE",
+                "description": "The Wikidata ID for this concept."
+            }
+        ]
     }
 ]

@@ -68,6 +68,12 @@
         "description": "The hierarchy level for this publisher. A publisher with hierarchy level 0 has no parent publishers. A hierarchy level 1 publisher has one parent above it, and so on."
     },
     {
+        "name": "homepage_url",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "The URL for this funder's primary homepage."
+    },
+    {
         "name": "id",
         "type": "STRING",
         "mode": "NULLABLE",

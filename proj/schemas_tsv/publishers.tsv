@@ -10,6 +10,7 @@ counts_by_year.year	INTEGER	NULLABLE	The year.
 created_date	DATE	NULLABLE	The date this Publisher object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
 display_name	STRING	NULLABLE	The primary name of the publisher.
 hierarchy_level	INTEGER	NULLABLE	The hierarchy level for this publisher. A publisher with hierarchy level 0 has no parent publishers. A hierarchy level 1 publisher has one parent above it, and so on.
+homepage_url	STRING	NULLABLE	The URL for this funder's primary homepage.
 id	STRING	NULLABLE	The OpenAlex ID for this publisher.
 ids	RECORD	NULLABLE	All the external identifiers that we know about for this publisher. IDs are expressed as URIs whenever possible.
 ids.openalex	STRING	NULLABLE	this publishers’s OpenAlex ID

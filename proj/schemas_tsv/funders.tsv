@@ -36,6 +36,7 @@ summary_stats.h_index	INTEGER	NULLABLE	The h-index for this funder.
 summary_stats.i10_index	INTEGER	NULLABLE	The i-10 index for this funder.
 summary_stats.oa_percent	FLOAT	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
+updated_date	TIMESTAMP	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this funder object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_count	INTEGER	NULLABLE	The number of works linked to this funder.
 x_concepts	RECORD	REPEATED	The concepts most frequently applied to works created by this author. Will be deprecated soon with no communication.

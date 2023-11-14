@@ -324,6 +324,12 @@
                 "description": ""
             },
             {
+                "name": "is_oa",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "issn",
                 "type": "STRING",
                 "mode": "REPEATED",

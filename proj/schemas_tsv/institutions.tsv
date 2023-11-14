@@ -51,6 +51,7 @@ repositories.host_organization_lineage_names	STRING	REPEATED	The names of the or
 repositories.host_organization_name	STRING	NULLABLE	The display_name from the host_organization, shown for convenience.
 repositories.id	STRING	NULLABLE	The OpenAlex ID of the repository.
 repositories.is_in_doaj	BOOLEAN	NULLABLE	
+repositories.is_oa	BOOLEAN	NULLABLE	
 repositories.issn	STRING	REPEATED	
 repositories.issn_l	STRING	NULLABLE	
 repositories.publisher	STRING	NULLABLE	

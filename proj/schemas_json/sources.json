@@ -210,6 +210,12 @@
         "description": ""
     },
     {
+        "name": "publisher_lineage",
+        "type": "STRING",
+        "mode": "REPEATED",
+        "description": ""
+    },
+    {
         "name": "societies",
         "type": "RECORD",
         "mode": "REPEATED",

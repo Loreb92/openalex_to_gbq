@@ -230,18 +230,16 @@
         ]
     },
     {
+        "name": "updated",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": ""
+    },
+    {
         "name": "updated_date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE",
-        "description": "",
-        "fields": [
-            {
-                "name": "updated_date",
-                "type": "TIMESTAMP",
-                "mode": "NULLABLE",
-                "description": "The last time anything in this funder object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts."
-            }
-        ]
+        "description": "The last time anything in this funder object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts."
     },
     {
         "name": "works_count",

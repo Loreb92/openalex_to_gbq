@@ -3,6 +3,7 @@ associated_institutions	RECORD	REPEATED
 associated_institutions.country_code	STRING	NULLABLE	The country where this institution is located, represented as an ISO two-letter country code.
 associated_institutions.display_name	STRING	NULLABLE	The primary name of the institution.
 associated_institutions.id	STRING	NULLABLE	The OpenAlex ID for this institution.
+associated_institutions.lineage	STRING	REPEATED	
 associated_institutions.relationship	STRING	NULLABLE	The type of relationship between this institution and the listed institution. Possible values: parent, child, and related.
 associated_institutions.ror	STRING	NULLABLE	The ROR ID for this institution. The ROR (Research Organization Registry) identifier is a globally unique ID for research organization. ROR is the successor to GRiD, which is no longer being updated.
 associated_institutions.type	STRING	NULLABLE	The institution’s primary type, using the ROR “type” controlled vocabulary. Possible values are: Education, Healthcare, Company, Archive, Nonprofit, Government, Facility, and Other.

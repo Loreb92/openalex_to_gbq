@@ -24,6 +24,12 @@
                 "description": "The OpenAlex ID for this institution."
             },
             {
+                "name": "lineage",
+                "type": "STRING",
+                "mode": "REPEATED",
+                "description": ""
+            },
+            {
                 "name": "relationship",
                 "type": "STRING",
                 "mode": "NULLABLE",

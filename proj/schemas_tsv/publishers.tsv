@@ -40,6 +40,7 @@ summary_stats.i10_index	INTEGER	NULLABLE
 summary_stats.oa_percent	FLOAT	NULLABLE	
 summary_stats.sources_count	INTEGER	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
+updated	TIMESTAMP	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this publisher object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_count	INTEGER	NULLABLE	The number of works published by this publisher.
 x_concepts	RECORD	REPEATED	The “x” in x_concepts is because it’s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint. The Concepts most frequently applied to works affiliated with this institution. Each is represented as a dehydrated Concept object, with one additional attribute

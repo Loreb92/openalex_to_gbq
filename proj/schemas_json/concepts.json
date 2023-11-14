@@ -310,7 +310,7 @@
         ]
     },
     {
-        "name": "updated ",
+        "name": "updated",
         "type": "TIMESTAMP",
         "mode": "NULLABLE",
         "description": ""

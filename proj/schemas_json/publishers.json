@@ -242,6 +242,12 @@
                 "description": ""
             },
             {
+                "name": "sources_count",
+                "type": "INTEGER",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "works_count",
                 "type": "INTEGER",
                 "mode": "NULLABLE",

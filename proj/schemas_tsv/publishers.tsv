@@ -38,6 +38,7 @@ summary_stats.cited_by_count	INTEGER	NULLABLE
 summary_stats.h_index	INTEGER	NULLABLE	
 summary_stats.i10_index	INTEGER	NULLABLE	
 summary_stats.oa_percent	FLOAT	NULLABLE	
+summary_stats.sources_count	INTEGER	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this publisher object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_count	INTEGER	NULLABLE	The number of works published by this publisher.

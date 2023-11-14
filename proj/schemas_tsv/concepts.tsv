@@ -48,6 +48,7 @@ summary_stats.h_index	INTEGER	NULLABLE
 summary_stats.i10_index	INTEGER	NULLABLE	
 summary_stats.oa_percent	FLOAT	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
+updated 	TIMESTAMP	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this concept object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 wikidata	STRING	NULLABLE	The Wikidata ID for this concept. This is the Canonical External ID for concepts.
 works_api_url	STRING	NULLABLE	An URL that will get you a list of all the works tagged with this concept. We express this as an API URL (instead of just listing the works themselves) because there might be millions of works tagged with this concept, and that’s too many to fit here.

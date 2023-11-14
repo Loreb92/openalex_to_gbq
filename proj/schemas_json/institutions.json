@@ -306,6 +306,12 @@
                 "description": "The OpenAlex ID of the repository."
             },
             {
+                "name": "is_in_doaj",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE",
+                "description": ""
+            },
+            {
                 "name": "issn",
                 "type": "STRING",
                 "mode": "REPEATED",

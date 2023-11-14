@@ -27,6 +27,7 @@ roles.id	STRING	NULLABLE
 roles.role	STRING	NULLABLE	
 roles.works_count	INTEGER	NULLABLE	
 sources_api_url	STRING	NULLABLE	An URL that will get you a list of all the sources published by this publisher. We express this as an API URL (instead of just listing the sources themselves) because there might be thousands of sources linked to a publisher, and that’s too many to fit here.
+sources_count	INTEGER	NULLABLE	
 summary_stats	RECORD	NULLABLE	Citation metrics for this publisher
 summary_stats.2yr_cited_by_count	INTEGER	NULLABLE	
 summary_stats.2yr_h_index	INTEGER	NULLABLE	

@@ -176,6 +176,12 @@
         "description": "An URL that will get you a list of all the sources published by this publisher. We express this as an API URL (instead of just listing the sources themselves) because there might be thousands of sources linked to a publisher, and that\u2019s too many to fit here."
     },
     {
+        "name": "sources_count",
+        "type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": ""
+    },
+    {
         "name": "summary_stats",
         "type": "RECORD",
         "mode": "NULLABLE",

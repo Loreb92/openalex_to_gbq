@@ -53,6 +53,8 @@ repositories.issn	STRING	REPEATED
 repositories.issn_l	STRING	NULLABLE	
 repositories.publisher	STRING	NULLABLE	
 repositories.publisher_id	STRING	NULLABLE	
+repositories.publisher_lineage	STRING	REPEATED	
+repositories.publisher_lineage_names	STRING	REPEATED	
 repositories.type	STRING	NULLABLE	
 roles	RECORD	REPEATED	
 roles.id	STRING	NULLABLE	

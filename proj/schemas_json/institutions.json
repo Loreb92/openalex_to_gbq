@@ -336,6 +336,18 @@
                 "description": ""
             },
             {
+                "name": "publisher_lineage",
+                "type": "STRING",
+                "mode": "REPEATED",
+                "description": ""
+            },
+            {
+                "name": "publisher_lineage_names",
+                "type": "STRING",
+                "mode": "REPEATED",
+                "description": ""
+            },
+            {
                 "name": "type",
                 "type": "STRING",
                 "mode": "NULLABLE",

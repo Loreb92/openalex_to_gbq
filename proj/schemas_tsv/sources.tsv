@@ -34,6 +34,7 @@ issn_l	STRING	NULLABLE	The ISSN-L identifying this source. ISSN is a global and 
 publisher	STRING	NULLABLE	The name of this source’s publisher. Publisher is a tricky category, as journals often change publishers, publishers merge, publishers have subsidiaries (“imprints”), and of course no one is consistent in their naming. In the future, we plan to roll out support for a more structured publisher field, but for now it’s just a string.
 publisher_id	STRING	NULLABLE	
 publisher_lineage	STRING	REPEATED	
+publisher_lineage_names	STRING	REPEATED	
 societies	RECORD	REPEATED	Societies on whose behalf the source is published and maintained, obtained from our crowdsourced list. Thanks!
 societies.organization	STRING	NULLABLE	The society organisation name.
 societies.url	STRING	NULLABLE	The society URL.

@@ -51,6 +51,7 @@ summary_stats.i10_index	INTEGER	NULLABLE
 summary_stats.oa_percent	FLOAT	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
 type	STRING	NULLABLE	The type of source, which will be one of the following from the Type column: journal, repository, conference, ebook platform.
+updated	TIMESTAMP	NULLABLE	The
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this Source object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_api_url	STRING	NULLABLE	A URL that will get you a list of all this Source’s Works. We express this as an API URL (instead of just listing the works themselves) because sometimes a source’s publication list is too long to reasonably fit into a single Source object.
 works_count	INTEGER	NULLABLE	The number of Works this this Source hosts.

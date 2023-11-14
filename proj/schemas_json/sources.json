@@ -322,6 +322,12 @@
         "description": "The type of source, which will be one of the following from the Type column: journal, repository, conference, ebook platform."
     },
     {
+        "name": "updated",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": "The"
+    },
+    {
         "name": "updated_date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE",

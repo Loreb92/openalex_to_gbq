@@ -15,6 +15,7 @@ counts_by_year.year	INTEGER	NULLABLE	The year.
 created_date	DATE	NULLABLE	The date this Source object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
 display_name	STRING	NULLABLE	The name of the source.
 homepage_url	STRING	NULLABLE	The starting page for navigating the contents of this source; the homepage for this source’s website.
+host_institution_lineage	STRING	REPEATED	
 host_institution_lineage_names	STRING	REPEATED	
 host_organization	STRING	NULLABLE	The host organization for this source as an OpenAlex ID. This will be an Institution.id if the source is a repository, and a Publisher.id if the source is a journal, conference, or eBook platform (based on the type field).
 host_organization_lineage	STRING	REPEATED	OpenAlex IDs — See Publisher.lineage. This will only be included if the host_organization is a publisher (and not if the host_organization is an institution).

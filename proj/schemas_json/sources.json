@@ -100,6 +100,12 @@
         "description": "The starting page for navigating the contents of this source; the homepage for this source\u2019s website."
     },
     {
+        "name": "host_institution_lineage_names",
+        "type": "STRING",
+        "mode": "REPEATED",
+        "description": ""
+    },
+    {
         "name": "host_organization",
         "type": "STRING",
         "mode": "NULLABLE",

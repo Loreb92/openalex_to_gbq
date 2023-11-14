@@ -42,6 +42,7 @@ international.display_name	RECORD	NULLABLE	The institution’s display name in d
 international.display_name.keys	STRING	REPEATED	The language codes in wikidata language code format.
 international.display_name.values	STRING	REPEATED	The translated display_names in each language.
 lineage	STRING	REPEATED	OpenAlex IDs of institutions. The list will include this institution’s ID, as well as any parent institutions. If this institution has no parent institutions, this list will only contain its own ID.
+relationship	STRING	NULLABLE	
 repositories	RECORD	REPEATED	Repositories (Sources with type: repository) that have this institution as their host_organization
 repositories.display_name	STRING	NULLABLE	The repositories display name.
 repositories.host_institution_lineage	STRING	REPEATED	

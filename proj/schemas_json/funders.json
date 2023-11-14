@@ -230,13 +230,13 @@
         "description": "The concepts most frequently applied to works created by this author. Will be deprecated soon with no communication.",
         "fields": [
             {
-                "name": "concept_id",
+                "name": "display_name",
                 "type": "STRING",
                 "mode": "NULLABLE",
                 "description": ""
             },
             {
-                "name": "display_name",
+                "name": "id",
                 "type": "STRING",
                 "mode": "NULLABLE",
                 "description": ""

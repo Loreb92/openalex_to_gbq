@@ -486,6 +486,12 @@
         "description": "The institution\u2019s primary type, using the ROR \u201ctype\u201d controlled vocabulary. Possible values are: Education, Healthcare, Company, Archive, Nonprofit, Government, Facility, and Other."
     },
     {
+        "name": "updated",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": ""
+    },
+    {
         "name": "updated_date",
         "type": "TIMESTAMP",
         "mode": "NULLABLE",

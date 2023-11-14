@@ -77,6 +77,7 @@ summary_stats.i10_index	INTEGER	NULLABLE
 summary_stats.oa_percent	FLOAT	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
 type	STRING	NULLABLE	The institution’s primary type, using the ROR “type” controlled vocabulary. Possible values are: Education, Healthcare, Company, Archive, Nonprofit, Government, Facility, and Other.
+updated	TIMESTAMP	NULLABLE	
 updated_date	TIMESTAMP	NULLABLE	The last time anything in this Institution changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_api_url	STRING	NULLABLE	A URL that will get you a list of all the Works affiliated with this institution. We express this as an API URL (instead of just listing the Works themselves) because most institutions have way too many works to reasonably fit into a single return object.
 works_count	INTEGER	NULLABLE	The number of Works created by authors affiliated with this institution. Or less formally: the number of works coming out of this institution.

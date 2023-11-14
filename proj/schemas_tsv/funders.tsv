@@ -10,6 +10,7 @@ counts_by_year.year	INTEGER	NULLABLE
 created_date	DATE	NULLABLE	The date this Funder object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
 description	STRING	NULLABLE	A short description of this funder, taken from Wikidata.
 display_name	STRING	NULLABLE	The primary name of the funder.
+grants_count	INTEGER	NULLABLE	The number of grants linked to this funder.
 homepage_url	STRING	NULLABLE	The URL for this funder’s primary homepage.
 id	STRING	NULLABLE	The OpenAlex ID for this funder.
 ids	RECORD	NULLABLE	All the external identifiers that we know about for this funder. IDs are expressed as URIs whenever possible.

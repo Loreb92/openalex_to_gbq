@@ -16,7 +16,7 @@ aws s3 sync 's3://openalex' 'openalex-snapshot' --no-sign-request
 
 ```
 docker build -t node . --no-cache --progress=plain
-docker run -d --name node -v /$PWD/openalex-original:/openalex_to_gbq/openalex-original -v /$PWD/openalex-processed:/openalex_to_gbq/openalex-processed --rm node
+docker run -d --name node -v /$PWD/openalex-original:/openalex_to_gbq/openalex-original -v /$PWD/openalex-processed:/openalex_to_gbq/openalex-processed --rm -ti node
 ```
 
 For the larger parts of the data this process takes several hours.

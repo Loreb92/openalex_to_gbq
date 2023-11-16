@@ -53,7 +53,7 @@ function fixRecord(data) {
 function fixFile(inPath, outPath, file) {
 	console.log(inPath+file)
 
-	var pipeline = util.promisify(stream.pipeline);
+	//var pipeline = util.promisify(stream.pipeline);
     var inputStream = fileSystem.createReadStream( inPath+file );
     var outputStream = fileSystem.createWriteStream( outPath + file );
 
@@ -89,16 +89,26 @@ function fixFile(inPath, outPath, file) {
 		;
 
     //await pipeline(
-    pipeline(
-        inputStream,
-        gunzip,
-        transformInStream,
-        transformOutStream,
-        gzip,
-        outputStream
-    ).then(() => {
-		callback(); // Move to the next file once processing is complete
-	}).catch(error => console.error('Error occurred: ', error));
+    //pipeline(
+    //    inputStream,
+    //    gunzip,
+    //    transformInStream,
+    //    transformOutStream,
+    //    gzip,
+    //    outputStream
+    //).then(() => {
+	//	callback(); // Move to the next file once processing is complete
+	//}).catch(error => console.error('Error occurred: ', error));
+    inputStream
+        .pipe(gunzip)
+        .pipe(transformInStream)
+        .pipe(transformOutStream)
+        .pipe(gzip)
+        .pipe(outputStream)
+        .on("finish", function () {
+            console.log(chalk.green(`File processed: ${file}`));
+            // Processed file, continue to the next one...
+        });
 }
 
 

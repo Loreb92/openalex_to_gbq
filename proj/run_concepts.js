@@ -107,7 +107,9 @@ function start(inPath, outPath, files) {
         if (!fileSystem.existsSync(outPath + files[i])) {
             //await fixFile(inPath, outPath, files[i]);
             fixFile(inPath, outPath, files[i]);
-        }
+        } else {
+			console.log("Skipped: " + inPath + files[i])
+		}
     }
 }
 

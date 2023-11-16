@@ -177,11 +177,14 @@ function fixFile(inPath, outPath, file) {
 //async function start(inPath, outPath, files) {
 function start(inPath, outPath, files) {
 	for(let i=0; i< files.length; i++){
-		// if the output file does not already exist, run the fix
+		// if the output file does not already exist, run the fix. Else, print the file skipped
 		if (!fileSystem.existsSync(outPath + files[i])) {
 			//await fixFile(inPath, outPath, files[i]);
 			fixFile(inPath, outPath, files[i]);
+		} else {
+			console.log("Skipped: " + inPath + files[i])
 		}
+		
 	}
 }
 

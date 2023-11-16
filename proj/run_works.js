@@ -116,7 +116,8 @@ function fixRecord(data) {
 
 }
 
-async function fixFile(inPath, outPath, file) {
+//async function fixFile(inPath, outPath, file) {
+function fixFile(inPath, outPath, file) {
 	console.log(inPath+file)
 
 	var pipeline = util.promisify(stream.pipeline);
@@ -161,7 +162,8 @@ async function fixFile(inPath, outPath, file) {
 			)
 		;
 
-    await pipeline(
+    //await pipeline(
+	pipeline(
         inputStream,
         gunzip,
         transformInStream,
@@ -172,10 +174,15 @@ async function fixFile(inPath, outPath, file) {
 }
 
 
-async function start(inPath, outPath, files) {
-    for(let i=0; i< files.length; i++){
-        await fixFile(inPath, outPath, files[i]);
-      }
+//async function start(inPath, outPath, files) {
+function start(inPath, outPath, files) {
+	for(let i=0; i< files.length; i++){
+		// if the output file does not already exist, run the fix
+		if (!fileSystem.existsSync(outPath + files[i])) {
+			//await fixFile(inPath, outPath, files[i]);
+			fixFile(inPath, outPath, files[i]);
+		}
+	}
 }
 
 
@@ -216,5 +223,6 @@ for (let i = 0; i < folders.length; i++) {
   }
 
   var files = fileSystem.readdirSync(inPath);
-  await start(inPath, outPath, files);
+  //await start(inPath, outPath, files);
+  start(inPath, outPath, files);
 }

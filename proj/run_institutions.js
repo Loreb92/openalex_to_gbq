@@ -108,7 +108,7 @@ async function fixFile(inPath, outPath, file) {
 async function start(inPath, outPath, files) {
     for(let i=0; i< files.length; i++){
 		// check if output file already exists
-		if (fileSystem.existsSync(outPath + files[i])) {
+		if (!fileSystem.existsSync(outPath + files[i])) {
 			await fixFile(inPath, outPath, files[i]);
 		} else {
 			console.log("Skipping " + files[i] + " because it already exists.")

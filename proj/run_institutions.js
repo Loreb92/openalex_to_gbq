@@ -101,7 +101,9 @@ function fixFile(inPath, outPath, file) {
         transformOutStream,
         gzip,
         outputStream
-    );
+    ).then(() => {
+		callback(); // Move to the next file once processing is complete
+	}).catch(error => console.error('Error occurred: ', error));
 }
 
 

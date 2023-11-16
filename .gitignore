@@ -7,3 +7,5 @@
 **/*.gz
 **/*.gz
 **/manifest
+openalex-original/*.txt
+openalex-original/*.html

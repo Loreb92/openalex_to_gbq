@@ -48,11 +48,10 @@ function fixRecord(data) {
 
 }
 
-//async function fixFile(inPath, outPath, file) {
-function fixFile(inPath, outPath, file) {
+async function fixFile(inPath, outPath, file) {
 	console.log(inPath+file)
 
-	//var pipeline = util.promisify(stream.pipeline);
+	var pipeline = util.promisify(stream.pipeline);
     var inputStream = fileSystem.createReadStream( inPath+file );
     var outputStream = fileSystem.createWriteStream( outPath + file );
 
@@ -93,42 +92,26 @@ function fixFile(inPath, outPath, file) {
 			)
 		;
 
-    //await pipeline(
-    //pipeline(
-    //    inputStream,
-    //    gunzip,
-    //    transformInStream,
-    //    transformOutStream,
-    //    gzip,
-    //    outputStream
-    //).then(() => {
-	//	callback(); // Move to the next file once processing is complete
-	//}).catch(error => console.error('Error occurred: ', error));
-    inputStream
-        .pipe(gunzip)
-        .pipe(transformInStream)
-        .pipe(transformOutStream)
-        .pipe(gzip)
-        .pipe(outputStream)
-        .on("finish", function () {
-            console.log(chalk.green(`File processed: ${file}`));
-            // Processed file, continue to the next one...
-        });
-
+    await pipeline(
+        inputStream,
+        gunzip,
+        transformInStream,
+        transformOutStream,
+        gzip,
+        outputStream
+    );
 }
 
 
-//async function start(inPath, outPath, files) {
-function start(inPath, outPath, files) {
+async function start(inPath, outPath, files) {
     for(let i=0; i< files.length; i++){
-        // if the output file does not already exist, run the fix
-        if (!fileSystem.existsSync(outPath + files[i])) {
-            //await fixFile(inPath, outPath, files[i]);
-            fixFile(inPath, outPath, files[i]);
-        } else {
-			console.log("Skipped: " + inPath + files[i])
+		// check if output file already exists
+		if (fileSystem.existsSync(outPath + files[i])) {
+			await fixFile(inPath, outPath, files[i]);
+		} else {
+			console.log("Skipping " + files[i] + " because it already exists.")
 		}
-    }
+      }
 }
 
 
@@ -160,6 +143,5 @@ for (let i = 0; i < folders.length; i++) {
   }
 
   var files = fileSystem.readdirSync(inPath);
-  //await start(inPath, outPath, files);
-  start(inPath, outPath, files);
+  await start(inPath, outPath, files);
 }

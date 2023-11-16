@@ -1,3 +1,5 @@
+
+process.env.UV_THREADPOOL_SIZE=3;
 import chalk from "chalk";
 import fileSystem from "fs";
 import ndjson from "ndjson";

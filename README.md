@@ -53,8 +53,14 @@ What may go wrong?
 3. Copy files to google cloud storage
 
 ```
-gsutil -m cp -r openalex-processed/data/*git  gs://my-bucket/dest
+gsutil -m cp -r openalex-processed/data/*  gs://my-bucket/dest/
+gsutil -m cp -r openalex-original/data/authors gs://my-bucket/dest/
+gsutil -m cp -r openalex-original/data/funders gs://my-bucket/dest/
+gsutil -m cp -r openalex-original/data/merged_ids gs://my-bucket/dest/
+gsutil -m cp -r openalex-original/data/publishers gs://my-bucket/dest/
+gsutil -m cp -r openalex-original/data/sources gs://my-bucket/dest/
 ```
+
 
 4. Create JSON schema files
 

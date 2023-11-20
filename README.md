@@ -94,7 +94,7 @@ Steps 4. and 5. may be repeated several times until the correct schema files are
 - Fields `concepts.updated` and `concepts.updated_date` are read as STRING in the schema because they are reported sometimes as DATE and sometimes as DATETIME. Same for `publishers` and `sources`.
 
 ## TODO
-- Manage `manifest` files: those should be out of the directory containing the subfolders with data, otherwise the command to upload files to BigQuery does not recognize them.
+- Manage `manifest` files: those should be out of the directory containing the subfolders with data, otherwise the command to upload files to BigQuery does not recognize them. At the moment, I've moved them manually into `gs://my-bucket/../data/`.
 
 
 Enjoy!

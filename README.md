@@ -91,7 +91,7 @@ Steps 4. and 5. may be repeated several times until the correct schema files are
 ## Notes
 - Inverted Abstracts are converted to strings.
 - Concepts.international is dropped because it was a headache to deal with.
-- Fields `concepts.updated` and `concepts.updated_date` are read as STRING in the schema because they are reported sometimes as DATE and sometimes as DATETIME. Same for `publishers`.
+- Fields `concepts.updated` and `concepts.updated_date` are read as STRING in the schema because they are reported sometimes as DATE and sometimes as DATETIME. Same for `publishers` and `sources`.
 
 ## TODO
 - Manage `manifest` files: those should be out of the directory containing the subfolders with data, otherwise the command to upload files to BigQuery does not recognize them.

@@ -231,13 +231,13 @@
     },
     {
         "name": "updated",
-        "type": "TIMESTAMP",
+        "type": "STRING",
         "mode": "NULLABLE",
         "description": ""
     },
     {
         "name": "updated_date",
-        "type": "TIMESTAMP",
+        "type": "STRING",
         "mode": "NULLABLE",
         "description": "The last time anything in this author object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts."
     },

@@ -36,8 +36,8 @@ summary_stats.h_index	INTEGER	NULLABLE
 summary_stats.i10_index	INTEGER	NULLABLE	
 summary_stats.oa_percent	FLOAT	NULLABLE	
 summary_stats.works_count	INTEGER	NULLABLE	
-updated	TIMESTAMP	NULLABLE	
-updated_date	TIMESTAMP	NULLABLE	The last time anything in this author object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
+updated	STRING	NULLABLE	
+updated_date	STRING	NULLABLE	The last time anything in this author object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
 works_api_url	STRING	NULLABLE	A URL that will get you a list of all this author’s works. We express this as an API URL (instead of just listing the works themselves) because sometimes an author’s publication list is too long to reasonably fit into a single author object.
 works_count	INTEGER	NULLABLE	The number of Works this this author has created.
 x_concepts	RECORD	REPEATED	The “x” in x_concepts is because it’s experimental and subject to removal with very little warning. We plan to replace it with a custom link to the Concepts API endpoint.

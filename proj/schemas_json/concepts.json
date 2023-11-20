@@ -311,13 +311,13 @@
     },
     {
         "name": "updated",
-        "type": "TIMESTAMP",
+        "type": "DATE",
         "mode": "NULLABLE",
         "description": ""
     },
     {
         "name": "updated_date",
-        "type": "TIMESTAMP",
+        "type": "DATE",
         "mode": "NULLABLE",
         "description": "The last time anything in this concept object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts."
     },

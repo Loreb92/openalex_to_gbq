@@ -69,7 +69,7 @@ The JSON schema files are needed to specify the structure of the database. Given
 The starting point has been the schema tables provided at https://academic-observatory-workflows.readthedocs.io/en/latest/telescopes/openalex.html. The schema is in a tabular form and can be transformed to JSON using the `convert_tsv_to_json_schema.py` script:
 
 ```
-python convert_tsv_to_json_schema.py proj/schemas_tsv proj/schemas_json
+python convert_tsv_into_json_schema.py proj/schemas_tsv proj/schemas_json
 ```
 
 This script converts all the `.tsv` files in the folder `proj/schemas_tsv` into JSON schema file that are saved in the folder `proj/schemas_json`. 

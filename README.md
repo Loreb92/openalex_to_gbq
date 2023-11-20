@@ -14,6 +14,8 @@ aws s3 sync 's3://openalex' 'openalex-snapshot' --no-sign-request
 
 2. Build Docker image and run the scripts into the container.
 
+Modify the first line of the scripts `proj/run_<entity>.js`. This sets the variable `UV_THREADPOOL_SIZE`, which is the number of threads that node.js can use. The default value is 3. Increase this number if you have more cores. 
+
 ```
 docker build -t node . --no-cache --progress=plain
 docker run -d --name node -v /$PWD/openalex-original:/openalex_to_gbq/openalex-original -v /$PWD/openalex-processed:/openalex_to_gbq/openalex-processed --rm -ti node
@@ -21,13 +23,31 @@ docker run -d --name node -v /$PWD/openalex-original:/openalex_to_gbq/openalex-o
 
 For the larger parts of the data this process takes several hours.
 
-To run each command manually from the container, just remove the `-d` flag. Then run each script manually for the container. For example:
+To run each command manually from the container, just remove the `-d` flag and add `sh` at the end of the `docker run` command. Then run each script manually for the container. For example:
 
 ```
 node run_works
 ```
 
-Note: `venues` and `authors` do not require convertion and can be uploaded as is. 
+Note: the other concepts except `works`, `institutions`, and `concepts` do not require convertion and can be uploaded as is. 
+
+After that, to check if all data have been copied:
+
+```
+find openalex-processed/data/<entity>/ -type f -name "*.gz" | xargs zcat | wc -l
+find openalex-original/data/<entity>/ -type f -name "*.gz" | xargs zcat | wc -l
+```
+This script will count the total number of lines for each entity file. Note that with `works` this takes some time.
+
+A quicker check consists in comparing the total size of the folders.
+
+What may go wrong?
+
+- The container may freeze, namely, the container is up but all its processes are frozen. It is not clear why it happens. One possibility is that it starts to consume too much RAM. In this case do the following:
+    - Print the logs of the container `docker logs -t node` and identify the file that was being processed when the container froze.
+    - Stop the container `docker stop node`.
+    - Delete the file that was being processed `rm openalex-processed/data/<entity>/<folder>/<filename>.gz`.
+    - Restart the container with `docker run ...`. The script will skip the files that were already processed and will continue with the next file.
 
 
 3. Copy files to google cloud storage

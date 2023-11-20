@@ -91,6 +91,7 @@ Steps 4. and 5. may be repeated several times until the correct schema files are
 ## Notes
 - Inverted Abstracts are converted to strings.
 - Concepts.international is dropped because it was a headache to deal with.
+- Fields "updated" and "updated_date" in `concepts` are read as STRING because they are reported sometimes as DATE and sometimes as DATETIME.
 
 
 Enjoy!

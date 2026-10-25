@@ -56,7 +56,8 @@ fi
 
 for ds in "${selected[@]}"; do
     echo "Downloading $ds ..."
-    aws s3 sync "s3://openalex/data/$ds/" "$DEST_DIR/$ds/" --no-sign-request
+    echo "aws s3 sync \"s3://openalex/data/jsonl/$ds/\" \"$DEST_DIR/$ds/\" --no-sign-request"
+    aws s3 sync "s3://openalex/data/jsonl/$ds/" "$DEST_DIR/$ds/" --no-sign-request
 done
 
 echo "Done."

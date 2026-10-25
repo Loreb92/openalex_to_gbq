@@ -71,7 +71,8 @@ else
 fi
 
 for ds in "${selected[@]}"; do
-    TABLE="${ds}_${VERSION}"
+    #TABLE="${ds}_${VERSION}"
+    TABLE="${ds}"
     GCS_PATH="gs://${GCS_BUCKET}/${VERSION}/${ds}/"
 
     # Find schema file: try exact version first, then most recent available

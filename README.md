@@ -78,6 +78,8 @@ pixi run schema all              # generate all schemas
 pixi run schema -m 5 works       # sample at most 5 files
 ```
 
+NOTE: There is a slight incompatibility between the bigquery-schema-generator and the authors table of the OpenAlex data. The field `issn` should be an array of strings, but appears as null or empty array. When the issn field is null and empty array within the same author record, the schema generator throws an error. For this reason, an exception in the `schema.sh` script is necessary around lines 130-140.
+
 6. Validate record counts
 
 Checks that converted files match the record counts in the OpenAlex manifest. Uses parallel decompression (cores/2) and `pigz` when available for faster validation.
@@ -92,6 +94,8 @@ pixi run validate all            # validate everything
 
 7. Upload to GCS
 
+From Storage, create a bucket named `openalex-snapshot-<VERSION>` and run the `upload` task to upload data to GCS.
+
 Uploads files to GCS, tracking progress in `data/upload/<VERSION>/<dataset>.tsv`. Already-uploaded files (status OK) are skipped on re-run; failed uploads are retried automatically.
 
 Use `-m N` to limit to N new files per dataset.
@@ -104,7 +108,9 @@ pixi run upload all              # upload everything
 
 8. Load into BigQuery
 
-Creates tables with versioned names (e.g. `works_20260210`).
+From BigQuery, create a dataset named `openalex` and run the `bq` task to load data from GCS into BQ. 
+
+Creates tables (e.g. `works`).
 
 ```
 pixi run bq works

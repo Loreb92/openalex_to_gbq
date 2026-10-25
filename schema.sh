@@ -126,7 +126,21 @@ for path in files:
         echo "  Updating existing schema incrementally"
         SCHEMA_FLAGS="$SCHEMA_FLAGS --existing_schema_path $SCHEMA_FILE"
     fi
-    generate-schema $SCHEMA_FLAGS < "$TMPFILE" > "${SCHEMA_FILE}.tmp"
+    echo "  Running: generate-schema $SCHEMA_FLAGS < $TMPFILE > ${SCHEMA_FILE}.tmp"
+    
+    # if the ds is authors, we need to fix the input first to avoid errors in generate-schema
+    if [ "$ds" = "authors" ]; then
+
+        python fix_schema_input.py < "$TMPFILE" \
+            | generate-schema $SCHEMA_FLAGS > "${SCHEMA_FILE}.tmp"
+    else
+
+        generate-schema $SCHEMA_FLAGS < "$TMPFILE" > "${SCHEMA_FILE}.tmp"
+
+    fi
+
+    #generate-schema $SCHEMA_FLAGS < "$TMPFILE" > "${SCHEMA_FILE}.tmp"
+ 
     mv "${SCHEMA_FILE}.tmp" "$SCHEMA_FILE"
     rm -f "$TMPFILE"
 

@@ -70,7 +70,8 @@ mkdir -p "$VALIDATION_DIR"
 exit_code=0
 
 for ds in "${selected[@]}"; do
-    MANIFEST="data/raw/${VERSION}/${ds}/manifest"
+    # MANIFEST="data/raw/${VERSION}/${ds}/manifest"
+    MANIFEST="data/raw/${VERSION}/${ds}/manifest.json"
 
     if [ ! -f "$MANIFEST" ]; then
         echo "Error: manifest not found at $MANIFEST"
@@ -80,7 +81,8 @@ for ds in "${selected[@]}"; do
 
     echo "Validating ${ds} ..."
 
-    expected_total=$(jq '.meta.record_count' "$MANIFEST")
+    # expected_total=$(jq '.meta.record_count' "$MANIFEST")
+    expected_total=$(jq '.record_count' "$MANIFEST")
     PROGRESS_FILE="${VALIDATION_DIR}/${ds}.tsv"
 
     # Load previously validated files (format: file\tactual\texpected\tstatus)
@@ -101,8 +103,19 @@ for ds in "${selected[@]}"; do
     CACHED_COUNT=0
 
     while IFS=$'\t' read -r url expected_count; do
-        rel_path="${url#s3://openalex/data/}"
-        converted_file="data/converted/${VERSION}/${rel_path}"
+        #rel_path="${url#s3://openalex/data/}"
+        rel_path="${url#s3://openalex/data/jsonl/}"
+
+        #converted_file="data/converted/${VERSION}/${rel_path}"
+        # use converted files only for datasets requiring conversion
+        case "$ds" in
+            works|concepts|institutions|sources)
+                converted_file="data/converted/${VERSION}/${rel_path}"
+                ;;
+            *)
+                converted_file="data/raw/${VERSION}/${rel_path}"
+                ;;
+        esac
 
         if [ -f "$converted_file" ]; then
             if [ -n "${VALIDATED[$rel_path]+x}" ]; then
@@ -114,7 +127,8 @@ for ds in "${selected[@]}"; do
         else
             MISSING+=("$rel_path")
         fi
-    done < <(jq -r '.entries[] | [.url, .meta.record_count] | @tsv' "$MANIFEST")
+    #done < <(jq -r '.entries[] | [.url, .meta.record_count] | @tsv' "$MANIFEST")
+    done < <(jq -r '.files[] | [.url, .meta.record_count] | @tsv' "$MANIFEST")
 
     for m in "${MISSING[@]+"${MISSING[@]}"}"; do
         echo "  ${m}: FILE NOT FOUND"
@@ -163,7 +177,8 @@ for ds in "${selected[@]}"; do
     # Report results using cached + new counts
     actual_total=0
     while IFS=$'\t' read -r url expected_count; do
-        rel_path="${url#s3://openalex/data/}"
+        #rel_path="${url#s3://openalex/data/}"
+        rel_path="${url#s3://openalex/data/jsonl/}"
 
         if [ -z "${VALIDATED[$rel_path]+x}" ]; then
             continue
@@ -178,7 +193,8 @@ for ds in "${selected[@]}"; do
             echo "  ${rel_path}: ${actual_count}/${expected_count} MISMATCH"
             all_ok=false
         fi
-    done < <(jq -r '.entries[] | [.url, .meta.record_count] | @tsv' "$MANIFEST")
+    #done < <(jq -r '.entries[] | [.url, .meta.record_count] | @tsv' "$MANIFEST")
+    done < <(jq -r '.files[] | [.url, .meta.record_count] | @tsv' "$MANIFEST")
 
     if [ "$actual_total" -eq "$expected_total" ]; then
         echo "  TOTAL: ${actual_total}/${expected_total} OK"

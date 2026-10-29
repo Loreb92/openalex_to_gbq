@@ -68,6 +68,8 @@ pixi run convert all               # convert works, concepts, institutions, sour
 
 5. Generate schemas
 
+__NOTE__: unfortunately this step seems not to work as expected and generated incomplete schemas. I did not investigate it further and generated the schemas by trial and error.
+
 Uses [bigquery-schema-generator](https://github.com/bxparks/bigquery-schema-generator) to generate BQ schemas from the data. Prefers converted data when available, otherwise falls back to raw. If a schema file already exists, it is updated incrementally (new fields are merged in).
 
 Use `-m N` to limit the number of files sampled per dataset (useful for quick schema drafts).

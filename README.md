@@ -120,27 +120,40 @@ pixi run bq works concepts
 pixi run bq all              # load everything
 ```
 
-9. Make tables public
+~~9. Make tables public~~
 
-Grants `allUsers` read access (`roles/bigquery.dataViewer`) to BigQuery tables.
-
-```
-pixi run public works
-pixi run public all              # all tables
-```
-
-10. Cleanup
-
-Remove local data files for the current version:
+~~Grants `allUsers` read access (`roles/bigquery.dataViewer`) to BigQuery tables.~~
 
 ```
-pixi run cleanup
+~~pixi run public works~~
+~~pixi run public all              # all tables~~
 ```
 
-Move GCS files to archive storage class:
+~~10. Cleanup~~
+
+~~Remove local data files for the current version:~~
 
 ```
-pixi run gcs-archive
+~~pixi run cleanup~~
+```
+
+9. Validate BigQuery tables
+
+Checks that the BigQuery tables match the expected schema and record counts. This will check the metadata of the BigQuery tables against the manifest files and run a feq queries to filter, select, join the tables just to make sure that everything apparently works.
+
+Note that this is not a comprehensive check but rather a quick check to see if macroscopic issues have arised during upload.
+
+```
+pixi run validate-bq-dry          # dry-run, show queries runned and costs
+pixi run validate-bq              # validate all tables
+```
+
+Note: the validation of the connection between works and authors in "Works joins" may not result in 100% match, but something around 99%. This can be expected because OpenAlex may improve name entity disambiguation over time by merging or deleting author entities. However, it may happen that authorships of works maintain temporarily the old author references.
+
+~~10. Move GCS files to archive/Coldline storage class:~~
+
+```
+~~pixi run gcs-archive~~
 ```
 
 ## Notes
